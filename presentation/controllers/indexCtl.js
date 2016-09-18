@@ -9,13 +9,10 @@
  * Define el controlador de la vista global index
  */
  
-(function(){
+(function() {
 	'use strict';
-	angular
-		.module('myDataCenter')
-	    .controller('ctlIndex', ctlIndex);
 
-	function ctlIndex($scope, $location) {
+	function indexCtl($scope, $location) {
 		
 		var vm = this;
         /*
@@ -32,5 +29,8 @@
 
 	    hideMenuBar();
 	};
-
+	
+	angular
+		.module('myDataCenter')
+	    .controller('indexCtl', indexCtl);
 })();
