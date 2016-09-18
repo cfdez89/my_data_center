@@ -1,3 +1,4 @@
+/* Style for search component */
 #search {
     float: right;
     margin-top: 9px;
@@ -14,25 +15,25 @@
     line-height: 22px;
 }
 
-    .search input {
-        position: absolute;
-        width: 0px;
-        float: Left;
-        margin-left: 349px;
-        -webkit-transition: all 0.7s ease-in-out;
-        -moz-transition: all 0.7s ease-in-out;
-        -o-transition: all 0.7s ease-in-out;
-        transition: all 0.7s ease-in-out;
-        height: 45px;
-        line-height: 18px;
-        padding: 0 2px 0 2px;
-        border-radius:1px;
-    }
+.search input {
+    position: absolute;
+    width: 0px;
+    float: Left;
+    margin-left: 349px;
+    -webkit-transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    transition: all 0.7s ease-in-out;
+    height: 45px;
+    line-height: 18px;
+    padding: 0 2px 0 2px;
+    border-radius:1px;
+}
 
-        .search:hover input, .search input:focus {
-            width: 339px;
-            margin-left: 0px;
-        }
+.search:hover input, .search input:focus {
+    width: 339px;
+    margin-left: 0px;
+}
 
 .btn {
     height: 45px;
