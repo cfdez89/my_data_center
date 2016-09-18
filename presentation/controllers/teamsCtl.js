@@ -6,10 +6,10 @@
  */
  
  /*Teams controller
- * Define el controlador de la vista global index
+ * Define el controlador de la vista global del equipo
  */
  
-(function(){
+(function() {
     'use strict';
 
     function teamsCtl($scope, $location) {
