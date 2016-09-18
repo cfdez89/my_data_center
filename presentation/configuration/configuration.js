@@ -33,11 +33,11 @@
         $routeProvider
             .when('/',{
                 templateUrl: '/presentation/views/players.html'
-                //controller: 'Avengers',
-               //controllerAs: 'vm'
             })
             .when('/teams', {
-                templateUrl: '/presentation/views/rankings.html'
+                templateUrl: '/presentation/views/teams.html',
+                controller: 'teamsCtl',
+                controllerAs: 'vm'
             })
             .when('/rankings', {
                 templateUrl: '/presentation/views/rankings.html'
