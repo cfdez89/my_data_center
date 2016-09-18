@@ -10,16 +10,14 @@
  */
  
 (function(){
-	'use strict';
+    'use strict';
 
-	function teamsCtl($scope, $location) {
+    function teamsCtl($scope, $location) {
 		
-		var vm = this;
-
-		
-	};
+        var vm = this;	
+    };
 	
-	angular
-		.module('myDataCenter')
-	    .controller('teamsCtl', teamsCtl);
+    angular
+        .module('myDataCenter')
+        .controller('teamsCtl', teamsCtl);
 })();
