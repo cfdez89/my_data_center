@@ -9,4 +9,4 @@ Running the server
 
     $ node server.js
 
-2) Once the server is running, open the project in the shape of : 'http://localhost:8080'. 
+2) Once the server is running, open the project in the shape of : 'http://localhost:3000'. 
