@@ -1,49 +1,77 @@
-<div id="jugadores" class="row" ng-controller="ctlJugadores" >
-    <!--div para la busqueda de un jugador-->
-    <div class="col-md-1"></div> 
-    <div class="col-md-10"> 
-        <div>
+<div id="jugadores" ng-controller="ctlJugadores" >
+
+    <div class="row">
+        <div class="col-md-1"></div> 
+        <div class="col-md-10"> 
             <img src="presentation/images/nba_players.png" width="100%" height="100%" >
             <br></br>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" >
-                <div class="panel-title">
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </span>
-                        <input class="form-control" type="text" placeholder="Busqueda por nombre..." required ng-model="mdlTag">
-                        <span class="input-group-addon">
-                            Cantidad de resultados: <span class="badge">{{filtrados.length}}</span>
-                        </span>
-                    </div>            
-                </div> 
+        <div class="col-md-1"></div> 
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div> 
+        <div class="col-md-10"> 
+            <div class="search" align="right">  
+                <input type="text" class="form-control" maxlength="64" placeholder=" Search" ng-model="mdlTag"/>
+                <button type="button" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-search"></span>  Search
+                </button>    
             </div>
-            <div class="panel-body" ng-repeat="jdr in filtrados=(jugadores | filter:mdlTag)" >
-                <div class="panel panel-default">
-                    <div class="panel-body" >
-                        <div class="row" align="center" valign="middle">
-                            <div class="col-md-2">
-                                <img ng-src="{{jdr.imgPasaporte}}" class="img-rounded">
-                            </div>
-                            <div class="col-md-8">
-                                <h4>{{jdr.nombre}}   jugador de los  {{jdr.equipo}}</h4>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="input-group">
-                                    <button type="button" class="btn btn-default" ng-click="verPerfil(jdr.id)"> 
-                                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Ver perfil
-                                    </button>
-                                </div> 
-                            </div>
-                        </div>   
+            <br></br>
+            <br></br>
+        </div>
+        <div class="col-md-1"></div> 
+    </div>
+    <!--div para la busqueda de un jugador-->
+    <div class="row">
+        <div class="col-md-1"></div> 
+        <div class="col-md-10"> 
+           
+            
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading" >
+                    <div class="panel-title">
+
+                        
+
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </span>
+                            <input class="form-control" type="text" placeholder="Busqueda por nombre..." required ng-model="mdlTag">
+                            <span class="input-group-addon">
+                                Cantidad de resultados: <span class="badge">{{filtrados.length}}</span>
+                            </span>
+                        </div>            
+                    </div> 
+                </div>
+                <div class="panel-body" ng-repeat="jdr in filtrados=(jugadores | filter:mdlTag)" >
+                    <div class="panel panel-default">
+                        <div class="panel-body" >
+                            <div class="row" align="center" valign="middle">
+                                <div class="col-md-2">
+                                    <img ng-src="{{jdr.imgPasaporte}}" class="img-rounded">
+                                </div>
+                                <div class="col-md-8">
+                                    <h4>{{jdr.nombre}}   jugador de los  {{jdr.equipo}}</h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <button type="button" class="btn btn-default" ng-click="verPerfil(jdr.id)"> 
+                                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Ver perfil
+                                        </button>
+                                    </div> 
+                                </div>
+                            </div>   
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-1"></div>  
+        <div class="col-md-1"></div> 
+    </div> 
 </div> 
 
  
