@@ -1,135 +1,133 @@
-<div id="rankings" ng-controller="ctlRankings" >
-    <br class="clear" />
-    <br><br/>
-    <!--div para la busqueda-->
-    <div class="row">
-        <div class="col-md-1"></div> 
-        <div flash-message="4000" ></div>
-        <div class="col-md-10">
-            <ul class="nav nav-pills nav-justified">
-                <li class="active"><a data-toggle="tab" href="#juego">Ranking estadisticas de juego</a></li>
-                <li><a data-toggle="tab" href="#social">Ranking impacto social</a></li>
-            </ul>
-            <div class="tab-content" align="center">
-                <div id="juego" class="tab-pane fade in active">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <select id="opcTemporadas" class="form-control" >
-                                        <option ng-repeat="temp in temporadas" value="{{temp.id}}">{{temp.anno}}</option>
-                                    </select>
-                                </div> 
-                                <div class="col-md-3">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"> Minimo juegos </span>
-                                        <input type="number" name="input" ng-model="parametrosBusqueda.juego.minimo" min="1" max="2000" class="form-control" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"> Top </span>
-                                        <input type="number" name="input" ng-model="parametrosBusqueda.juego.top" min="1" max="2000" class="form-control" required>
-                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <button type="button" class="btn btn-default " class="form-control" ng-click="generarRankingJuego(parametrosBusqueda.juego)">Generar Ranking</button> 
-                                </div>
-                                <br><br/>
-                            </div>
-                     
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Posicion</th>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Equipo</th>
-                                            <th>Indice total</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody ng-repeat="juego in rankings.juego">
-                                        <tr>
-                                            <td>{{juego.posicion}}</td>
-                                            <td>{{juego.nombre}}</td>
-                                            <td>{{juego.apellido}}</td>
-                                            <td>{{juego.equipo}}</td>
-                                            <td>{{juego.indice}}</td>
-                                        </tr>
-                                    </tbody>
-                            </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="social" class="tab-pane fade">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"> Fecha Minima </span>
-                                            <input id="fechaMinima" name="fechaMinima" my-datepicker type="text" class="form-control" ng-model="parametrosBusqueda.social.fechaMinima" required>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <div class="col-md-3">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"> Fecha Maxima </span>
-                                        <input id="fechaMaxima" name="fechaMaxima" my-datepicker type="text" class="form-control" ng-model="parametrosBusqueda.social.fechaMaxima" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"> Top </span>
-                                        <input type="number" name="input" ng-model="parametrosBusqueda.social.top" min="1" max="2000" class="form-control" required>
-                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <button type="button" class="btn btn-default " class="form-control" ng-click="generarRankingSocial(parametrosBusqueda.social)">Generar Ranking</button> 
-                                </div>
-                                <br><br/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="table-responsive" align="center">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Posicion</th>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Equipo</th>
-                                            <th># Menciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody ng-repeat="social in rankings.social">
-                                        <tr>
-                                            <td>{{social.posicion}}</td>
-                                            <td>{{social.nombre}}</td>
-                                            <td>{{social.apellido}}</td>
-                                            <td>{{social.equipo}}</td>
-                                            <td>{{social.menciones}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>   
-            <br><br/>        
+<div id="rankings" class="row" ng-controller="ctlRankings" >
+    <div class="col-md-1"></div> 
+    <div class="col-md-10">
+         <div>
+            <img src="presentation/images/nba_rankings.png" width="100%" height="100%" >
+            <br></br>
         </div>
-        <div class="col-md-1"></div> 
+        <ul class="nav nav-pills nav-justified">
+            <li class="active"><a data-toggle="tab" href="#juego">Ranking estadisticas de juego</a></li>
+            <li><a data-toggle="tab" href="#social">Ranking impacto social</a></li>
+        </ul>
+        <div class="tab-content" align="center">
+            <div id="juego" class="tab-pane fade in active">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <select id="opcTemporadas" class="form-control" >
+                                    <option ng-repeat="temp in temporadas" value="{{temp.id}}">{{temp.anno}}</option>
+                                </select>
+                            </div> 
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon"> Minimo juegos </span>
+                                    <input type="number" name="input" ng-model="parametrosBusqueda.juego.minimo" min="1" max="2000" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon"> Top </span>
+                                    <input type="number" name="input" ng-model="parametrosBusqueda.juego.top" min="1" max="2000" class="form-control" required>
+                                 </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="button" class="btn btn-default " class="form-control" ng-click="generarRankingJuego(parametrosBusqueda.juego)">Generar Ranking</button> 
+                            </div>
+                            <br><br/>
+                        </div>
+                 
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Posicion</th>
+                                        <th>Nombre</th>
+                                        <th>Apellido</th>
+                                        <th>Equipo</th>
+                                        <th>Indice total</th>
+                                    </tr>
+                                </thead>
+                                <tbody ng-repeat="juego in rankings.juego">
+                                    <tr>
+                                        <td>{{juego.posicion}}</td>
+                                        <td>{{juego.nombre}}</td>
+                                        <td>{{juego.apellido}}</td>
+                                        <td>{{juego.equipo}}</td>
+                                        <td>{{juego.indice}}</td>
+                                    </tr>
+                                </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="social" class="tab-pane fade">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"> Fecha Minima </span>
+                                        <input id="fechaMinima" name="fechaMinima" my-datepicker type="text" class="form-control" ng-model="parametrosBusqueda.social.fechaMinima" required>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon"> Fecha Maxima </span>
+                                    <input id="fechaMaxima" name="fechaMaxima" my-datepicker type="text" class="form-control" ng-model="parametrosBusqueda.social.fechaMaxima" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon"> Top </span>
+                                    <input type="number" name="input" ng-model="parametrosBusqueda.social.top" min="1" max="2000" class="form-control" required>
+                                 </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="button" class="btn btn-default " class="form-control" ng-click="generarRankingSocial(parametrosBusqueda.social)">Generar Ranking</button> 
+                            </div>
+                            <br><br/>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="table-responsive" align="center">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Posicion</th>
+                                        <th>Nombre</th>
+                                        <th>Apellido</th>
+                                        <th>Equipo</th>
+                                        <th># Menciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody ng-repeat="social in rankings.social">
+                                    <tr>
+                                        <td>{{social.posicion}}</td>
+                                        <td>{{social.nombre}}</td>
+                                        <td>{{social.apellido}}</td>
+                                        <td>{{social.equipo}}</td>
+                                        <td>{{social.menciones}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+        <br><br/>        
     </div>
+    <div class="col-md-1"></div> 
 </div> 
 
 
