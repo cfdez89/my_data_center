@@ -1,0 +1,41 @@
+{  
+	"title": "XNBA-MockDB",
+	"description": "XNBA players general information",
+	"players": [
+	    {
+    		"id":1,
+    		"nombre":"Player1",
+    		"apellido":"Surname1",
+    		"equipo":"Bulls",
+    		"urlImagen":"http://s01.s3c.es/imag/_v2/ecodiario/deportes/100x100/lebronjames.jpg"
+    	},
+    	{
+    		"id":2,
+    	 	"nombre":"Player2",
+    	 	"apellido":"Surname2",
+    	 	"equipo":"Bulls",
+    	 	"urlImagen":"http://s01.s3c.es/imag/_v2/ecodiario/deportes/100x100/lebronjames.jpg"
+    	},
+    	{
+    		"id":3,
+    		"nombre":"Player3",
+    		"apellido":"Surname3",
+    		"equipo":"Cavaliers",
+    		"urlImagen":"http://s01.s3c.es/imag/_v2/ecodiario/deportes/100x100/lebronjames.jpg"
+    	},
+    	{
+    		"id":4,
+    	 	"nombre":"Player4",
+    	 	"apellido":"Surname4",
+    	 	"equipo":"Heat",
+    	 	"urlImagen":"http://s01.s3c.es/imag/_v2/ecodiario/deportes/100x100/lebronjames.jpg"
+    	},
+    	{
+    		"id":5,
+    		"nombre":"Player5",
+    	 	"apellido":"Surname5",
+    	 	"equipo":"Heat",
+    	 	"urlImagen":"http://s01.s3c.es/imag/_v2/ecodiario/deportes/100x100/lebronjames.jpg"
+    	}
+	]  
+}
