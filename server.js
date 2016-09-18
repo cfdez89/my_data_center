@@ -25,16 +25,20 @@ app.set('port', process.env.PORT || 3000);
 
 // enable compression for css, js and html static files in the public directory
 app.use(compression());
-//app.use(express.static(__dirname+'/public')); for example
 
-//app.set('views', path.join(__dirname, '/client/views'));
+app.get('/', function(req, res){
+    res.sendfile(__dirname + '/presentation/views/index.html');
+});
+
+
+app.use('/', express.static(__dirname + '/'));
 //app.use(favicon(__dirname + '/client/public/images/favicon.ico'));
+
 app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ 
 	extended: true 
 }));
-//app.use(express.static(path.join(__dirname, 'client')));
 
 /* Error handling, running in development environment */
 if ('development' == app.get('env')) {
