@@ -71,7 +71,7 @@
                                             <th>Porcentaje de tiro de 3 puntos</th>
                                         </tr>
                                     </thead>
-                                    <tbody ng-repeat="regular in estadisticas.regular">
+                                    <tbody ng-repeat="regular in vm.estadisticas.regular">
                                         <tr>
                                             <td>{{vm.regular.temporada}}</td>
                                             <td>{{vm.regular.equipo}}</td>
@@ -112,7 +112,7 @@
                                             <th>Porcentaje de tiro de 3 puntos</th>
                                         </tr>
                                     </thead>
-                                    <tbody ng-repeat="posterior in estadisticas.posterior">
+                                    <tbody ng-repeat="posterior in vm.estadisticas.posterior">
                                         <tr>
                                             <td>{{vm.posterior.temporada}}</td>
                                             <td>{{vm.posterior.equipo}}</td>
