@@ -16,7 +16,7 @@
     	.factory('svsManejadorJugadores', [
           'solicitudesHttp',
     	    function(solicitudesHttp){
-              var urlBase   = "/jugadores";
+              var urlBase   = "http://localhost:3000/jugadores";
 
               var getPerfilJugadores = function(){
                   return  solicitudesHttp.retrieve(urlBase).then(function(pResp){

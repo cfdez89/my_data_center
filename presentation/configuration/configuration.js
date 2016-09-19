@@ -20,9 +20,6 @@
  */
 (function(){
     'use strict'
-    angular
-        .module('myDataCenter')
-        .config(config);
     
     function config($locationProvider, $routeProvider) {
         $locationProvider
@@ -32,7 +29,9 @@
             });
         $routeProvider
             .when('/',{
-                templateUrl: '/presentation/views/players.html'
+                templateUrl: '/presentation/views/players.html',
+                controller: 'playersCtl',
+                controllerAs: 'vm'   
             })
             .when('/teams', {
                 templateUrl: '/presentation/views/teams.html',
@@ -43,7 +42,9 @@
                 templateUrl: '/presentation/views/rankings.html'
             })
             .when('/players', {
-                templateUrl: '/presentation/views/players.html'
+                templateUrl: '/presentation/views/players.html',
+                controller: 'playersCtl',
+                controllerAs: 'vm'   
             })
             .when('/jugador', {
                 templateUrl: '/presentation/views/jugador.html'
@@ -51,5 +52,9 @@
             .otherwise({
                 redirectTo: '/presentation/views/players.html'
             });
-    };	
+    };
+
+    angular
+        .module('myDataCenter')
+        .config(config);	
 })();
