@@ -46,8 +46,10 @@
                 controller: 'playersCtl',
                 controllerAs: 'vm'   
             })
-            .when('/jugador', {
-                templateUrl: '/presentation/views/jugador.html'
+            .when('/player', {
+                templateUrl: '/presentation/views/player.html',
+                controller: 'playerCtl',
+                controllerAs: 'vm'
             })
             .otherwise({
                 redirectTo: '/presentation/views/players.html'

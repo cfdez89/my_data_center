@@ -57,27 +57,36 @@ function getAllPlayers() {
     }
 };
 
-function getPlayerById() {
+function getPlayerById(pId) {
 
     var db = readMockDB(filePath);
-    if(db.players == undefined) {
+    if(db.profiles == undefined) {
         return {
             status: false, 
             message: 'No se  ha obtenido los jugadores',
             data: {}
         } 
     }
+    for (var i = 0; i < db.profiles .length ; i++) {
+        if(db.profiles[i].id == pId){
+            return {
+                status: true, 
+                message: 'Se ha obtenido todos los jugadores de manera correcta',
+                data: db.profiles[i]
+            }
+        }   
+    };
     return {
-        status: true, 
-        message: 'Se ha obtenido todos los jugadores de manera correcta',
-        data: db.players
+        status: false, 
+        message: 'No se ha obtenido todos los jugadores de manera correcta',
+        data: {}
     }
 };
 
 function getAllRegularSeasonPlayerById() {
 
     var db = readMockDB(filePath);
-    if(db.players == undefined) {
+    if(db.profiles == undefined) {
         return {
             status: false, 
             message: 'No se  ha obtenido los jugadores',

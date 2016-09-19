@@ -33,9 +33,9 @@
         	}   
         };
 
-        vm.verPerfil = function(pId) {
+        vm.gotToProfile = function(pId) {
 		    svsCompartirJugador.setIdJugador(pId);
-		    $location.path('/jugador').replace();
+		    $location.path('/player').replace();
 		};
 
         getPlayers();

@@ -1,6 +1,12 @@
-<div id="jugador" ng-controller="ctlJugador" >
-    <br class="clear" />
-    <br><br/>
+<div id="player" ng-controller="playerCtl as vm" >
+    <div class="row">
+        <div class="col-md-1"></div> 
+        <div class="col-md-10"> 
+            <img src="presentation/images/nba_player_profile.png" width="100%" height="100%" >
+            <br></br>
+        </div>
+        <div class="col-md-1"></div> 
+    </div>
     <div class="row">
         <div class="col-md-1"></div> 
         <div flash-message="4000" ></div>
@@ -9,21 +15,29 @@
                 <div class="panel-body">
                     <!--div para la  foto del jugador-->
                     <div class="col-md-6">
-                        <img ng-src="{{jugador.imagen}}" class="img-rounded">
+                        <img ng-src="{{vm.jugador.urlImagen}}" class="img-rounded">
                     </div>
                     <!--div para ver el perfil del jugador-->
                     <div class="col-md-6">
-                        <h3> Nombre: {{jugador.nombre}}</h3>
-                        <p> Numero de camiseta: {{jugador.numCamiseta}}</p>
-                        <p> Fecha de nacimiento: {{jugador.fechaNacimiento}}</p>
-                        <p> Altura: {{jugador.altura}} cm</p>
-                        <p> Peso: {{jugador.peso}} kg</p>
-                        <p> Posicion: {{jugador.posicion}}</p>
-                        <p> Pais: {{jugador.pais}}</p>
-                        <p> Equipo actual: {{jugador.equipoActual}}</p>
+                        <h2> Nombre: {{vm.jugador.nombre}} {{vm.jugador.apellido}}</h2>
+                        <h3> Equipo actual: {{vm.jugador.equipoActual}}</h3>
+                        <h4> Numero de camiseta: {{vm.jugador.numCamiseta}}</h4>
+                        <p> Fecha de nacimiento: {{vm.jugador.fechaNacimiento}}</p>
+                        <p> Altura: {{vm.jugador.altura}} cm</p>
+                        <p> Peso: {{vm.jugador.peso}} kg</p>
+                        <p> Posicion: {{vm.jugador.posicion}}</p>
+                        <p> Pais: {{vm.jugador.pais}}</p>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="col-md-1"></div> 
+    </div>
+     <div class="row">
+        <div class="col-md-1"></div> 
+        <div class="col-md-10"> 
+            <img src="presentation/images/nba_player_statistics.png" width="100%" height="100%" >
+            <br></br>
         </div>
         <div class="col-md-1"></div> 
     </div>
@@ -59,17 +73,17 @@
                                     </thead>
                                     <tbody ng-repeat="regular in estadisticas.regular">
                                         <tr>
-                                            <td>{{regular.temporada}}</td>
-                                            <td>{{regular.equipo}}</td>
-                                            <td>{{regular.partidos}}</td>
-                                            <td>{{regular.partidosTitular}}</td>
-                                            <td>{{regular.puntosPartido}}</td>
-                                            <td>{{regular.asistenciasPartido}}</td>
-                                            <td>{{regular.robosPartido}}</td>
-                                            <td>{{regular.bloqueosPartido}}</td>
-                                            <td>{{regular.porcentajeTiroCampo}}</td>
-                                            <td>{{regular.porcentajeTiroLibre}}</td>
-                                            <td>{{regular.porcentajeTiroTresPuntos}}</td>
+                                            <td>{{vm.regular.temporada}}</td>
+                                            <td>{{vm.regular.equipo}}</td>
+                                            <td>{{vm.regular.partidos}}</td>
+                                            <td>{{vm.regular.partidosTitular}}</td>
+                                            <td>{{vm.regular.puntosPartido}}</td>
+                                            <td>{{vm.regular.asistenciasPartido}}</td>
+                                            <td>{{vm.regular.robosPartido}}</td>
+                                            <td>{{vm.regular.bloqueosPartido}}</td>
+                                            <td>{{vm.regular.porcentajeTiroCampo}}</td>
+                                            <td>{{vm.regular.porcentajeTiroLibre}}</td>
+                                            <td>{{vm.regular.porcentajeTiroTresPuntos}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -100,17 +114,17 @@
                                     </thead>
                                     <tbody ng-repeat="posterior in estadisticas.posterior">
                                         <tr>
-                                            <td>{{posterior.temporada}}</td>
-                                            <td>{{posterior.equipo}}</td>
-                                            <td>{{posterior.partidos}}</td>
-                                            <td>{{posterior.partidosTitular}}</td>
-                                            <td>{{posterior.puntosPartido}}</td>
-                                            <td>{{posterior.asistenciasPartido}}</td>
-                                            <td>{{posterior.robosPartido}}</td>
-                                            <td>{{posterior.bloqueosPartido}}</td>
-                                            <td>{{posterior.porcentajeTiroCampo}}</td>
-                                            <td>{{posterior.porcentajeTiroLibre}}</td>
-                                            <td>{{posterior.porcentajeTiroTresPuntos}}</td>
+                                            <td>{{vm.posterior.temporada}}</td>
+                                            <td>{{vm.posterior.equipo}}</td>
+                                            <td>{{vm.posterior.partidos}}</td>
+                                            <td>{{vm.posterior.partidosTitular}}</td>
+                                            <td>{{vm.posterior.puntosPartido}}</td>
+                                            <td>{{vm.posterior.asistenciasPartido}}</td>
+                                            <td>{{vm.posterior.robosPartido}}</td>
+                                            <td>{{vm.posterior.bloqueosPartido}}</td>
+                                            <td>{{vm.posterior.porcentajeTiroCampo}}</td>
+                                            <td>{{vm.posterior.porcentajeTiroLibre}}</td>
+                                            <td>{{vm.posterior.porcentajeTiroTresPuntos}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
