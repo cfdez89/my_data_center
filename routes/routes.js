@@ -13,9 +13,6 @@ var nbaService = require('../services/services.js');
 
 module.exports.initialize = function(app) {
     var router = express.Router();
-     router.get('/', function(req, res){
-        res.send("Hola mundo!");
-    });
 
     router.get('/temporadas', nbaService.getAllSeasons);
     router.get('/jugadores', nbaService.getAllPlayers);
@@ -25,7 +22,6 @@ module.exports.initialize = function(app) {
     router.get('/estadisticas/:id/juegos', nbaService.getAllGameStatisticsPlayerById);
     router.get('/estadisticas/sociales', nbaService.getAllSocialStatisticsPlayerById);
 
-app.use('/', router);
     app.use('/temporadas', router);
     app.use('/jugadores', router);
     app.use('/jugadores/:id/perfil', router);
