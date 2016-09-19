@@ -42,7 +42,7 @@ exports.getAllPostSeasonPlayerById = function(request, response) {
 exports.getAllGameStatisticsPlayerById = function(request, response) {
     var data = nbaRepository.getAllPlayers();
     response.status(200);
-	response.send(data);
+    response.send(data);
 };
 
 exports.getAllSocialStatisticsPlayerById = function(request, response) {
