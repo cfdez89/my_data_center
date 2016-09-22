@@ -177,5 +177,194 @@
                 }
             ]
         }
+    ],
+    "teams":[
+        {
+            "id":1,
+            "name":"Atlanta Hawks",
+            "since":"1968/69",
+            "image":"/presentation/images/teams/1.gif"
+        },
+         {
+            "id":2,
+            "name":"Boston Celtics",
+            "since":"1946/47",
+            "image":"/presentation/images/teams/2.gif"
+        },
+        {
+            "id":3,
+            "name":"Brooklyn Nets",
+            "since":"2012/13",
+            "image":"/presentation/images/teams/3.gif"
+        },
+        {
+            "id":4,
+            "name":"Charlotte Hornets",
+            "since":"2014/15",
+            "image":"/presentation/images/teams/4.gif"
+        },
+        {
+            "id":5,
+            "name":"Chicago Bulls",
+            "since":"1966/67",
+            "image":"/presentation/images/teams/5.gif"
+        },
+        {
+            "id":6,
+            "name":"Cleveland Cavaliers",
+            "since":"1970/71",
+            "image":"/presentation/images/teams/6.gif"
+        },
+        {
+            "id":7,
+            "name":"Dallas Mavericks",
+            "since":"1980/81",
+            "image":"/presentation/images/teams/7.gif"
+        },
+        {
+            "id":8,
+            "name":"Denver Nuggets",
+            "since":"1976/77",
+            "image":"/presentation/images/teams/8.gif"
+        },
+        {
+            "id":9,
+            "name":"Detroit Pistons",
+            "since":"1957/58",
+            "image":"/presentation/images/teams/9.gif"
+        },
+        {
+            "id":10,
+            "name":"Golden State Warriors",
+            "since":"1971/72",
+            "image":"/presentation/images/teams/10.gif"
+        },
+        {
+            "id":11,
+            "name":"Houston Rockets",
+            "since":"1971/72",
+            "image":"/presentation/images/teams/11.gif"
+        },
+        {
+            "id":12,
+            "name":"Indiana Pacers",
+            "since":"1976/77",
+            "image":"/presentation/images/teams/12.gif"
+        },
+        {
+            "id":13,
+            "name":"Los Angeles Clippers",
+            "since":"1984/85",
+            "image":"/presentation/images/teams/13.gif"
+        },
+        {
+            "id":14,
+            "name":"Los Angeles Lakers",
+            "since":"1960/61",
+            "image":"/presentation/images/teams/14.gif"
+        },
+        {
+            "id":15,
+            "name":"Memphis Grizzlies",
+            "since":"2001/02",
+            "image":"/presentation/images/teams/15.gif"
+        },
+        {
+            "id":16,
+            "name":"Miami Heat",
+            "since":"1988/89",
+            "image":"/presentation/images/teams/16.gif"
+        },
+        {
+            "id":17,
+            "name":"Milwaukee Bucks ",
+            "since":"1968/69",
+            "image":"/presentation/images/teams/17.gif"
+        },
+        {
+            "id":18,
+            "name":"Minnesota Timberwolves",
+            "since":"1989/90",
+            "image":"/presentation/images/teams/18.gif"
+        },
+        {
+            "id":19,
+            "name":"New Orleans Pelicans",
+            "since":"2013/14",
+            "image":"/presentation/images/teams/19.gif"
+        },
+        {
+            "id":20,
+            "name":"New York Knicks",
+            "since":"1946/47",
+            "image":"/presentation/images/teams/20.gif"
+        },
+        {
+            "id":21,
+            "name":"Oklahoma City Thunder",
+            "since":"2008/09",
+            "image":"/presentation/images/teams/21.gif"
+        }
+        ,
+        {
+            "id":22,
+            "name":"Orlando Magic",
+            "since":"1989/90",
+            "image":"/presentation/images/teams/22.gif"
+        }
+        ,
+        {
+            "id":23,
+            "name":"Philadelphia 76ers",
+            "since":"1963/64",
+            "image":"/presentation/images/teams/23.gif"
+        }
+        ,
+        {
+            "id":24,
+            "name":"Phoenix Suns",
+            "since":"1968/69",
+            "image":"/presentation/images/teams/24.gif"
+        }
+        ,
+        {
+            "id":25,
+            "name":"Portland Trail Blazers  ",
+            "since":"1970/71",
+            "image":"/presentation/images/teams/25.gif"
+        }
+        ,
+        {
+            "id":26,
+            "name":"Sacramento Kings",
+            "since":"1985/86",
+            "image":"/presentation/images/teams/26.gif"
+        }
+        ,
+        {
+            "id":27,
+            "name":"San Antonio Spurs",
+            "since":"1976/77",
+            "image":"/presentation/images/teams/27.gif"
+        }
+        ,
+        {
+            "id":28,
+            "name":"Toronto Raptors",
+            "since":"1995/96",
+            "image":"/presentation/images/teams/28.gif"
+        },
+        {
+            "id":29,
+            "name":"Utah Jazz",
+            "since":"1979/80",
+            "image":"/presentation/images/teams/29.gif"
+        },
+        {
+            "id":30,
+            "name":"Washington Wizards",
+            "since":"1997/98",
+            "image":"/presentation/images/teams/30.gif"
+        }    
     ]  
 }

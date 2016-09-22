@@ -12,12 +12,12 @@
 (function() {
     'use strict';
 
-	function playersCtl($scope, $location, svsNavegacion, svsManejadorJugadores, svsCompartirJugador, mensajeError) {
+	function playersCtl($scope, $location, svsManejadorJugadores, svsCompartirJugador, mensajeError) {
 		
-		var vm     = this;
-		vm.players = [];
-	    vm.tagMdl  = "";
-		vm.filtrados = 0; 
+		var vm           = this;
+		vm.players       = [];
+	    vm.tagMdl        = "";
+		vm.filtrados     = 0; 
 		vm.visibleSearch = false;
 
         var getPlayers = function() {

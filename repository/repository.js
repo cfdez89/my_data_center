@@ -151,6 +151,22 @@ function getAllSocialStatisticsPlayerById() {
     }
 };
 
+function getAllTeams() {
+
+    var db = readMockDB(filePath);
+    if(db.teams == undefined) {
+        return {
+            status: false, 
+            message: 'No se  ha obtenido los equipos',
+            data: {}
+        } 
+    }
+    return {
+        status: true, 
+        message: 'Se ha obtenido todos los equipos de manera correcta',
+        data: db.teams
+    }
+};
 
 module.exports = {
     getAllSeasons: getAllSeasons,
@@ -159,5 +175,6 @@ module.exports = {
     getAllRegularSeasonPlayerById: getAllRegularSeasonPlayerById,
     getAllPostSeasonPlayerById: getAllPostSeasonPlayerById,
     getAllGameStatisticsPlayerById: getAllGameStatisticsPlayerById,
-    getAllSocialStatisticsPlayerById: getAllSocialStatisticsPlayerById
+    getAllSocialStatisticsPlayerById: getAllSocialStatisticsPlayerById,
+    getAllTeams: getAllTeams
 };

@@ -50,3 +50,9 @@ exports.getAllSocialStatisticsPlayerById = function(request, response) {
     response.status(200);
     response.send(data);
 };
+
+exports.getAllTeams = function(request, response) {
+    var data = nbaRepository.getAllTeams();
+    response.status(200);
+    response.send(data);
+};

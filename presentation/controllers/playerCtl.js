@@ -12,8 +12,8 @@
     'use strict';
 
     function playerCtl($scope, svsManejadorJugadores, svsCompartirJugador, svsManejadorEstadisticas, mensajeError) {
-        var vm           = this;
-        vm.jugador       = [];
+        var vm          = this;
+        vm.jugador      = [];
         vm.estadisticas = {};
 
         var getPlayerProfile = function() {

@@ -9,28 +9,32 @@
  * Servicio para compartir el id de un jugador entre controladores
  */
  
-(function(){
+(function() {
     'use strict';
-	angular
-		.module('myDataCenter')
-		.service('svsCompartirJugador', function(){
+
+    function svsCompartirJugador() { 
+
+        var idJugador;
 			
-			var idJugador;
-			
-			var asignarIdJugador = function(pId){
-			    idJugador = pId;
-			};
-			var obtenerIdJugador = function(){
-			  return idJugador;  
-			};
-			
-			return {
-			    setIdJugador: function(pId){
-				    asignarIdJugador(pId);
-				},
-				getIdJugador: function(){
-					return obtenerIdJugador();
-				}
+		var asignarIdJugador = function(pId) {
+		    idJugador = pId;
+		};
+
+		var obtenerIdJugador = function() {
+		  return idJugador;  
+		};
+		
+		return {
+		    setIdJugador: function(pId) {
+			    asignarIdJugador(pId);
+			},
+			getIdJugador: function() {
+				return obtenerIdJugador();
 			}
-		});
+		}
+	}; 
+    
+    angular
+        .module('myDataCenter')
+        .service('svsCompartirJugador', svsCompartirJugador);
 })();

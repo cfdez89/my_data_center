@@ -11,7 +11,27 @@
     <div class="row">
         <div class="col-md-1"></div> 
         <div class="col-md-10"> 
-            
+            <div class="panel panel-default">
+                <div class="panel-heading" >
+                    <div class="panel-title" align="right">
+                        <h4>Season 2016</h4>
+                    </div> 
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4" ng-repeat="tm in vm.teams">
+                            <div class="thumbnail" align="center">
+                                <br></br>
+                                <img ng-src="{{tm.image}}" width="50%" height="50%">
+                                <div class="caption">
+                                    <h4>{{tm.name}}</h4>
+                                    <p>{{tm.since}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
         </div>
         <div class="col-md-1"></div> 
     </div>  

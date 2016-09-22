@@ -1,7 +1,7 @@
 <div id="player" ng-controller="playerCtl as vm" >
     <div class="row">
         <div class="col-md-1"></div> 
-        <div class="col-md-10"> 
+        <div class="col-md-10" align="center"> 
             <img src="presentation/images/nba_player_profile.png" width="100%" height="100%" >
             <br></br>
         </div>
@@ -10,15 +10,15 @@
     <div class="row">
         <div class="col-md-1"></div> 
         <div flash-message="4000" ></div>
-        <div class="col-md-10" align="left">
+        <div class="col-md-10">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <!--div para la  foto del jugador-->
-                    <div class="col-md-6">
-                        <img ng-src="{{vm.jugador.urlImagen}}" class="img-rounded">
+                    <div class="col-md-6" align="center">
+                        <img ng-src="{{vm.jugador.urlImagen}}" class="img-rounded" width="90%" height="90%">
                     </div>
                     <!--div para ver el perfil del jugador-->
-                    <div class="col-md-6">
+                    <div class="col-md-6" align="left">
                         <h2> Nombre: {{vm.jugador.nombre}} {{vm.jugador.apellido}}</h2>
                         <h3> Equipo actual: {{vm.jugador.equipoActual}}</h3>
                         <h4> Numero de camiseta: {{vm.jugador.numCamiseta}}</h4>

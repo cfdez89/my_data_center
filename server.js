@@ -23,22 +23,17 @@ var routes = require('./routes/routes.js');
 /* app configuration */
 app.set('port', process.env.PORT || 3000);
 
-// enable compression for css, js and html static files in the public directory
-app.use(compression());
-
 app.get('/', function(req, res){
-    res.sendfile(__dirname + '/presentation/views/index.html');
+    res.sendFile(__dirname + '/presentation/views/index.html');
 });
 
-
-app.use('/', express.static(__dirname + '/'));
 //app.use(favicon(__dirname + '/client/public/images/favicon.ico'));
-
+// enable compression for css, js and html static files in the public directory
+app.use(compression());
 app.use(methodOverride());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ 
-	extended: true 
-}));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/', express.static(__dirname + '/'));
 
 /* Error handling, running in development environment */
 if ('development' == app.get('env')) {
@@ -60,6 +55,6 @@ routes.initialize(app);
 var server = http.createServer(app);
 
 /* Server listener starts here */
-server.listen(app.get('port'), function(){
-	console.log('Listening at port 3000...');
+server.listen(app.get('port'), function() {
+	console.log('Listening at port ' + app.get('port'));
 });

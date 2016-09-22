@@ -12,9 +12,18 @@
 (function() {
     'use strict';
 
-    function teamsCtl($scope, $location) {
+    function teamsCtl($scope, teamsService, mensajeError) {
 		
-        var vm = this;	
+        var vm   = this;	
+        vm.teams = [];
+
+        var getTeams = function() {
+            teamsService.getAllTeams().then(function(response) {
+                response.status ? vm.teams = response.data: mensajeError.mostrarError();	
+            });
+        };
+
+        getTeams();
     };
 	
     angular
