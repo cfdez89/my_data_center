@@ -11,32 +11,38 @@
 (function() {
     'use strict';
 
-    function playerCtl($scope, svsManejadorJugadores, svsCompartirJugador, svsManejadorEstadisticas, mensajeError) {
+    function playerCtl(sharePlayerService, svsManejadorJugadores, svsManejadorEstadisticas, mensajeError) {
         var vm          = this;
+        vm.playerId     = -1;
         vm.jugador      = [];
         vm.estadisticas = {};
+        
+        var setPlayerId = function() {
+            vm.playerId = sharePlayerService.getIdJugador();
+        };
 
-        var getPlayerProfile = function() {
-	        svsManejadorJugadores.obtenerJugador(svsCompartirJugador.getIdJugador()).then(function(response) {
+        var setPlayerProfile = function() {
+	        svsManejadorJugadores.obtenerJugador(vm.playerId).then(function(response) {
 	        	response.status ? vm.jugador = response.data: mensajeError.mostrarError();		
             });
         };
 
-        var getRegTemStatistics = function() {
-	        svsManejadorJugadores.obtenerTempRegularJugador(svsCompartirJugador.getIdJugador()).then(function(response) {
+        var setRegTemStatistics = function() {
+	        svsManejadorJugadores.obtenerTempRegularJugador(vm.playerId).then(function(response) {
 	        	response.status ? vm.estadisticas.regular = response.data: mensajeError.mostrarError();		
             });
         };
 
-        var getPostTemStatistics = function() {
-	        svsManejadorJugadores.obtenerTempPosteriorJugador(svsCompartirJugador.getIdJugador()).then(function(response) {
+        var setPostTemStatistics = function() {
+	        svsManejadorJugadores.obtenerTempPosteriorJugador(vm.playerId).then(function(response) {
 	        	response.status ? vm.estadisticas.posterior = response.data: mensajeError.mostrarError();		
             });
         };
 
-        getPlayerProfile();
-        getRegTemStatistics();
-        getPostTemStatistics();
+        setPlayerId();
+        setPlayerProfile();
+        setRegTemStatistics();
+        setPostTemStatistics();
     };
 
     angular

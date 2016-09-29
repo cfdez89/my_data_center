@@ -12,7 +12,7 @@
 (function() {
     'use strict';
 
-	function playersCtl($scope, $location, svsManejadorJugadores, svsCompartirJugador, mensajeError) {
+	function playersCtl($location, sharePlayerService, svsManejadorJugadores, mensajeError) {
 		
 		var vm           = this;
 		vm.players       = [];
@@ -20,7 +20,7 @@
 		vm.filtrados     = 0; 
 		vm.visibleSearch = false;
 
-        var getPlayers = function() {
+        var setPlayers = function() {
             svsManejadorJugadores.obtenerJugadores().then(function(response) {
                 response.status ? vm.players = response.data: mensajeError.mostrarError();	
                 console.log(vm.players);
@@ -34,11 +34,11 @@
         };
 
         vm.gotToProfile = function(pId) {
-		    svsCompartirJugador.setIdJugador(pId);
+		    sharePlayerService.setIdJugador(pId);
 		    $location.path('/player').replace();
 		};
 
-        getPlayers();
+        setPlayers();
         
 	};
 

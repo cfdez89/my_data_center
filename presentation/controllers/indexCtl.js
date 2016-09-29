@@ -12,7 +12,7 @@
 (function() {
 	'use strict';
 
-	function indexCtl($scope, $location) {
+	function indexCtl() {
 		
 		var vm = this;
         /*
