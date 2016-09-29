@@ -25,10 +25,10 @@
         };
 
         return {
-            setIdJugador: function(pId) {
+            setPlayer: function(pId) {
                 setPlayerId(pId);
             },
-            getIdJugador: function() {
+            getPlayer: function() {
                 return getPlayerId();
             }
         }
