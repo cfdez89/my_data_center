@@ -12,7 +12,7 @@
 (function() {
     'use strict';
 
-	function playersCtl($location, sharePlayerService, svsManejadorJugadores, mensajeError) {
+	function playersCtl($location, sharePlayerService, svsManejadorJugadores, notificationService) {
 		
 		var vm           = this;
 		vm.players       = [];
@@ -22,8 +22,7 @@
 
         var setPlayers = function() {
             svsManejadorJugadores.obtenerJugadores().then(function(response) {
-                response.status ? vm.players = response.data: mensajeError.mostrarError();	
-                console.log(vm.players);
+                response.status ? vm.players = response.data: notificationService.dangerMessage();	
             });
         };
 
@@ -34,7 +33,7 @@
         };
 
         vm.gotToProfile = function(pId) {
-		    sharePlayerService.setIdJugador(pId);
+		    sharePlayerService.setPlayer(pId);
 		    $location.path('/player').replace();
 		};
 
