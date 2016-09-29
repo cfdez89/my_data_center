@@ -12,7 +12,7 @@
 (function() {
     'use strict';
 
-    function teamsCtl($scope, teamsService, mensajeError) {
+    function teamsCtl(teamsService, mensajeError) {
 		
         var vm   = this;	
         vm.teams = [];
