@@ -15,24 +15,24 @@
     function sharePlayerService() { 
 
         var playerId;
-			
-		var setPlayerId = function(pId) {
-		    playerId = pId;
-		};
+	
+        var setPlayerId = function(pId) {
+            playerId = pId;
+        };
 
-		var getPlayerId = function() {
-		  return playerId;  
-		};
-		
-		return {
-		    setIdJugador: function(pId) {
-			    setPlayerId(pId);
-			},
-			getIdJugador: function() {
-				return getPlayerId();
-			}
-		}
-	}; 
+        var getPlayerId = function() {
+            return playerId;  
+        };
+
+        return {
+            setIdJugador: function(pId) {
+                setPlayerId(pId);
+            },
+            getIdJugador: function() {
+                return getPlayerId();
+            }
+        }
+    }; 
     
     angular
         .module('myDataCenter')
