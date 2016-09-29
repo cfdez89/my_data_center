@@ -27,7 +27,7 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/presentation/views/index.html');
 });
 
-//app.use(favicon(__dirname + '/client/public/images/favicon.ico'));
+app.use(favicon(__dirname + '/presentation/images/favicon.ico'));
 // enable compression for css, js and html static files in the public directory
 app.use(compression());
 app.use(methodOverride());
