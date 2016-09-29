@@ -12,29 +12,29 @@
 (function() {
     'use strict';
 
-    function svsCompartirJugador() { 
+    function sharePlayerService() { 
 
-        var idJugador;
+        var playerId;
 			
-		var asignarIdJugador = function(pId) {
-		    idJugador = pId;
+		var setPlayerId = function(pId) {
+		    playerId = pId;
 		};
 
-		var obtenerIdJugador = function() {
-		  return idJugador;  
+		var getPlayerId = function() {
+		  return playerId;  
 		};
 		
 		return {
 		    setIdJugador: function(pId) {
-			    asignarIdJugador(pId);
+			    setPlayerId(pId);
 			},
 			getIdJugador: function() {
-				return obtenerIdJugador();
+				return getPlayerId();
 			}
 		}
 	}; 
     
     angular
         .module('myDataCenter')
-        .service('svsCompartirJugador', svsCompartirJugador);
+        .service('sharePlayerService', sharePlayerService);
 })();
