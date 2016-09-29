@@ -12,14 +12,14 @@
 (function() {
     'use strict';
 
-    function teamsCtl(teamsService, mensajeError) {
+    function teamsCtl(teamsService, notificationService) {
 		
         var vm   = this;	
         vm.teams = [];
 
         var getTeams = function() {
             teamsService.getAllTeams().then(function(response) {
-                response.status ? vm.teams = response.data: mensajeError.mostrarError();	
+                response.status ? vm.teams = response.data: notificationService.dangerMessage();	
             });
         };
 

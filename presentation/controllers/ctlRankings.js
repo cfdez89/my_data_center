@@ -17,8 +17,8 @@
 	        '$scope',
             'svsManejadorEstadisticas',
             'svsManejadorTemporadas',
-            'mensajeError',
-    	    function($scope, svsManejadorEstadisticas, svsManejadorTemporadas, mensajeError){
+            'notificationService',
+    	    function($scope, svsManejadorEstadisticas, svsManejadorTemporadas, notificationService){
                
                 $scope.temporadas = [];
 
@@ -31,7 +31,7 @@
 
                 var cargarTemporadas = function(){
                     svsManejadorTemporadas.obtenerTemporadas().then(function(pResp){
-                        pResp.error ? mensajeError.mostrarError(): $scope.temporadas = pResp.parametros;  
+                        pResp.error ? notificationService.dangerMessage(): $scope.temporadas = pResp.parametros;  
                     });
                 };
 
@@ -40,13 +40,13 @@
                     pParametros.temporada = indice.options[indice.selectedIndex].text;
         
                     svsManejadorEstadisticas.obtenerEstadisticasJuegos(pParametros).then(function(pResp){
-                        pResp.error ? mensajeError.mostrarError(): $scope.rankings.juego = pResp.parametros;  
+                        pResp.error ? notificationService.dangerMessage(): $scope.rankings.juego = pResp.parametros;  
                     });
                 };
 
                 $scope.generarRankingSocial = function(pParametros){
                     svsManejadorEstadisticas.obtenerEstadisticasSociales(pParametros).then(function(pResp){
-                        pResp.error ? mensajeError.mostrarError(): $scope.rankings.social = pResp.parametros;  
+                        pResp.error ? notificationService.dangerMessage(): $scope.rankings.social = pResp.parametros;  
                     });
                 };
 
