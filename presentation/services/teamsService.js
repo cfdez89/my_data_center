@@ -12,12 +12,12 @@
 (function() {
     'use strict';
 
-    function teamsService(solicitudesHttp) {  
+    function teamsService(requestService) {  
         
         var urlBase = 'http://localhost:3000/teams';
         
         var getTeams = function() {
-            return  solicitudesHttp.retrieve(urlBase).then(function(pResp) {
+            return  requestService.retrieve(urlBase).then(function(pResp) {
                         return pResp.data; 
                     },  
                     function(pResp) {
