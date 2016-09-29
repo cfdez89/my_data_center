@@ -14,13 +14,13 @@
     angular
         .module('myDataCenter') 
         .factory('svsManejadorTemporadas', [
-            'solicitudesHttp',
-            function(solicitudesHttp){
+            'requestService',
+            function(requestService){
                 
                 var urlBase = '/temporadas';
                 
                 var getTemporadas = function(){
-                    return  solicitudesHttp.retrieve(urlBase).then(function(pResp){
+                    return  requestService.retrieve(urlBase).then(function(pResp){
                                 return pResp.data; 
                             },  
                             function(pResp){

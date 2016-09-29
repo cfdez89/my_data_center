@@ -15,15 +15,15 @@
 	angular
 		  .module('myDataCenter')	
     	.factory('svsManejadorEstadisticas', [
-          'solicitudesHttp',
-    	    function(solicitudesHttp){
+          'requestService',
+    	    function(requestService){
             
               var urlBase   = "/estadisticas";
 
               var getEstadisticasJuegos = function(pParametros){
                   var url = urlBase + '/' + pParametros.temporada + '/juegos';
 
-                  return  solicitudesHttp.retrieve(url).then(function(pResp){
+                  return  requestService.retrieve(url).then(function(pResp){
                               return pResp.data; 
                           },  
                           function(pResp){
@@ -34,7 +34,7 @@
               var getEstadisticasSociales = function(pParametros){
                   var url = urlBase + '/' + pParametros.fechaMinima + '/sociales/';
                   
-                  return  solicitudesHttp.retrieve(url).then(function(pResp){
+                  return  requestService.retrieve(url).then(function(pResp){
                               return pResp.data;
                           },
                           function(pResp){

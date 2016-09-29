@@ -14,12 +14,12 @@
 	angular
 		  .module('myDataCenter')	
     	.factory('svsManejadorJugadores', [
-          'solicitudesHttp',
-    	    function(solicitudesHttp){
+          'requestService',
+    	    function(requestService){
               var urlBase   = "http://localhost:3000/jugadores";
 
               var getPerfilJugadores = function(){
-                  return  solicitudesHttp.retrieve(urlBase).then(function(pResp){
+                  return  requestService.retrieve(urlBase).then(function(pResp){
                               return pResp.data; 
                           },  
                           function(pResp){
@@ -30,7 +30,7 @@
               var getPerfilJugador = function(pId){
                   var url = urlBase + '/' + pId;
                   
-                  return  solicitudesHttp.retrieve(url).then(function(pResp){
+                  return  requestService.retrieve(url).then(function(pResp){
                               return pResp.data;
                           },
                           function(pResp){
@@ -40,7 +40,7 @@
 
               var getTempRegJugador = function(pId){
                   var url = urlBase + '/' + pId + '/temporadaregular';
-                  return  solicitudesHttp.retrieve(url).then(function(pResp){
+                  return  requestService.retrieve(url).then(function(pResp){
                               return pResp.data;
                           },
                           function(pResp){
@@ -50,7 +50,7 @@
 
               var getTempPostJugador = function(pId){
                    var url = urlBase + '/' + pId + '/temporadaposterior';
-                   return  solicitudesHttp.retrieve(url).then(function(pResp){
+                   return  requestService.retrieve(url).then(function(pResp){
                               return pResp.data;
                           },
                           function(pResp){
