@@ -16,25 +16,25 @@
 	
         var showSuccess = function(pMessage) {
 
-        	var message = '<strong>Well done! </strong>';
+            var message = '<strong>Well done! </strong>';
             return Flash.create('success', menssage + pMessage);
         };
 
         var showInfo = function(pMessage) {
 
-        	var message = '<strong>Important! </strong>';
+            var message = '<strong>Important! </strong>';
             return Flash.create('info', menssage + pMessage);  
         };
 
         var showWarning = function(pMessage) {
 
-        	var message = '<strong>Warning! </strong>';
+            var message = '<strong>Warning! </strong>';
             return Flash.create('warning', menssage + pMessage);  
         };
 
         var showDanger = function(pMessage) {
 
-        	var message = '<strong>Error! </strong>';
+            var message = '<strong>Error! </strong>';
             return Flash.create('danger', menssage + pMessage);  
         };
 
