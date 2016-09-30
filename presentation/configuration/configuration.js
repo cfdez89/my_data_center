@@ -20,8 +20,14 @@
  */
 (function(){
     'use strict'
+
+    angular
+        .module('myDataCenter')
+        .config(configuration);
     
-    function config($locationProvider, $routeProvider) {
+    configuration.$inject = ['$locationProvider', '$routeProvider'];    
+    
+    function configuration($locationProvider, $routeProvider) {
         $locationProvider
             .html5Mode({
                 enabled: true,
@@ -56,7 +62,4 @@
             });
     };
 
-    angular
-        .module('myDataCenter')
-        .config(config);	
 })();
