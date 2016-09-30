@@ -16,9 +16,9 @@
 	    .controller('ctlRankings', [
 	        '$scope',
             'svsManejadorEstadisticas',
-            'svsManejadorTemporadas',
+            'seasonsService',
             'notificationService',
-    	    function($scope, svsManejadorEstadisticas, svsManejadorTemporadas, notificationService){
+    	    function($scope, svsManejadorEstadisticas, seasonsService, notificationService){
                
                 $scope.temporadas = [];
 
@@ -30,7 +30,7 @@
     	    	$scope.parametrosBusqueda = {};
 
                 var cargarTemporadas = function(){
-                    svsManejadorTemporadas.obtenerTemporadas().then(function(pResp){
+                    seasonsService.obtenerTemporadas().then(function(pResp){
                         pResp.error ? notificationService.dangerMessage(): $scope.temporadas = pResp.parametros;  
                     });
                 };

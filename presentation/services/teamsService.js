@@ -32,10 +32,10 @@
         };
    
         return  {
-                    getAllTeams: function() {
-                        return getTeams();             
-                    }
-                };
+            getAllTeams: function() {
+                return getTeams();             
+            }
+        };
     };
     
 })();

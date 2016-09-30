@@ -19,6 +19,8 @@
 	function indexCtl() {
 		
 		var vm = this;
+
+		
         /*
 		vm.verJugadores = function() {
 			$location.path('/jugadores').replace();
