@@ -9,8 +9,8 @@
 	'use strict';
 
 	angular
-		.module('myDataCenter')
-	    .service('requestService', requestService);
+        .module('myDataCenter')
+        .service('requestService', requestService);
 
 	requestService.$inject = ['$http'];
 

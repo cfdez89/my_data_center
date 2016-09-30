@@ -13,7 +13,7 @@
     'use strict';
 
     angular
-		.module('myDataCenter')
+        .module('myDataCenter')
 	    .controller('playersCtl', playersCtl);
 
 	playersCtl.$inject = ['$location', 'sharePlayerService', 'playersService', 'notificationService'];

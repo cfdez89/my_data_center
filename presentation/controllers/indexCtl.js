@@ -13,8 +13,8 @@
 	'use strict';
 
 	angular
-		.module('myDataCenter')
-	    .controller('indexCtl', indexCtl);
+        .module('myDataCenter')
+        .controller('indexCtl', indexCtl);
 
 	function indexCtl() {
 		
