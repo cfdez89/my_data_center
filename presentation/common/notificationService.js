@@ -12,6 +12,12 @@
  (function() {
     'use strict';
 
+    angular
+        .module('myDataCenter')
+        .factory('notificationService', notificationService);
+
+    notificationService.$inject = ['Flash'];
+
     function notificationService(Flash) { 
 	
         var showSuccess = function(pMessage) {
@@ -54,7 +60,5 @@
         }
     }; 
     
-    angular
-        .module('myDataCenter')
-        .factory('notificationService', notificationService);
+    
 })();

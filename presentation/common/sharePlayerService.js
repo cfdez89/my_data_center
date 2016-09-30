@@ -12,6 +12,10 @@
 (function() {
     'use strict';
 
+    angular
+        .module('myDataCenter')
+        .service('sharePlayerService', sharePlayerService);
+
     function sharePlayerService() { 
 
         var playerId;
@@ -34,7 +38,4 @@
         }
     }; 
     
-    angular
-        .module('myDataCenter')
-        .service('sharePlayerService', sharePlayerService);
 })();

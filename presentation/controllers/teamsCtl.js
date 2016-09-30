@@ -12,6 +12,12 @@
 (function() {
     'use strict';
 
+    angular
+        .module('myDataCenter')
+        .controller('teamsCtl', teamsCtl);
+
+    teamsCtl.$inject = ['teamsService', 'notificationService'];
+
     function teamsCtl(teamsService, notificationService) {
 		
         var vm   = this;	
@@ -26,7 +32,5 @@
         getTeams();
     };
 	
-    angular
-        .module('myDataCenter')
-        .controller('teamsCtl', teamsCtl);
+
 })();

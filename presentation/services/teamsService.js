@@ -12,6 +12,12 @@
 (function() {
     'use strict';
 
+    angular
+        .module('myDataCenter')
+        .factory('teamsService', teamsService);
+
+    teamsService.$inject = ['requestService'];
+
     function teamsService(requestService) {  
         
         var urlBase = 'http://localhost:3000/teams';
@@ -32,7 +38,4 @@
                 };
     };
     
-    angular
-        .module('myDataCenter')
-        .factory('teamsService', teamsService);
 })();

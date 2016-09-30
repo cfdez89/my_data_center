@@ -11,7 +11,14 @@
 (function() {
     'use strict';
 
+    angular
+        .module('myDataCenter')
+        .controller('playerCtl', playerCtl);
+
+    playerCtl.$inject = ['sharePlayerService', 'playersService', 'svsManejadorEstadisticas', 'notificationService'];
+
     function playerCtl(sharePlayerService, playersService, svsManejadorEstadisticas, notificationService) {
+        
         var vm          = this;
         vm.playerId     = -1;
         vm.jugador      = [];
@@ -45,7 +52,4 @@
         setPostTemStatistics();
     };
 
-    angular
-        .module('myDataCenter')
-        .controller('playerCtl', playerCtl);			
 })();

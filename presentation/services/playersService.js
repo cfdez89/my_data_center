@@ -12,6 +12,12 @@
 (function() {
     'use strict';
 
+    angular
+        .module('myDataCenter')
+        .factory('playersService', playersService);
+
+    playersService.$inject = ['requestService'];
+
     function playersService(requestService) {  
         
         var urlBase   = "http://localhost:3000/jugadores";
@@ -76,7 +82,4 @@
 
     };
     
-    angular
-        .module('myDataCenter')
-        .factory('playersService', playersService);
 })();

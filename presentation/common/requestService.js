@@ -8,6 +8,12 @@
 (function() {
 	'use strict';
 
+	angular
+		.module('myDataCenter')
+	    .service('requestService', requestService);
+
+	requestService.$inject = ['$http'];
+
 	function requestService($http) {
 		
 		return {
@@ -44,7 +50,4 @@
 		};   
 	};
 	
-	angular
-		.module('myDataCenter')
-	    .service('requestService', requestService);
 })();

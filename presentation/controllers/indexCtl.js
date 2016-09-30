@@ -12,6 +12,10 @@
 (function() {
 	'use strict';
 
+	angular
+		.module('myDataCenter')
+	    .controller('indexCtl', indexCtl);
+
 	function indexCtl() {
 		
 		var vm = this;
@@ -31,7 +35,4 @@
 	    hideMenuBar();
 	};
 	
-	angular
-		.module('myDataCenter')
-	    .controller('indexCtl', indexCtl);
 })();

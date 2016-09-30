@@ -12,6 +12,12 @@
 (function() {
     'use strict';
 
+    angular
+		.module('myDataCenter')
+	    .controller('playersCtl', playersCtl);
+
+	playersCtl.$inject = ['$location', 'sharePlayerService', 'playersService', 'notificationService'];
+
 	function playersCtl($location, sharePlayerService, playersService, notificationService) {
 		
 		var vm           = this;
@@ -41,7 +47,4 @@
         
 	};
 
-	angular
-		.module('myDataCenter')
-	    .controller('playersCtl', playersCtl);
 })();
