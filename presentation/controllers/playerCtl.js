@@ -15,9 +15,9 @@
         .module('myDataCenter')
         .controller('playerCtl', playerCtl);
 
-    playerCtl.$inject = ['sharePlayerService', 'playersService', 'svsManejadorEstadisticas', 'notificationService'];
+    playerCtl.$inject = ['sharePlayerService', 'playersService', 'notificationService'];
 
-    function playerCtl(sharePlayerService, playersService, svsManejadorEstadisticas, notificationService) {
+    function playerCtl(sharePlayerService, playersService, notificationService) {
         
         var vm          = this;
         vm.playerId     = -1;

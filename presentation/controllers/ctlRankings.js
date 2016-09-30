@@ -15,10 +15,10 @@
 	    .module('myDataCenter')
 	    .controller('ctlRankings', [
 	        '$scope',
-            'svsManejadorEstadisticas',
+            'stadisticsService',
             'seasonsService',
             'notificationService',
-    	    function($scope, svsManejadorEstadisticas, seasonsService, notificationService){
+    	    function($scope, stadisticsService, seasonsService, notificationService){
                
                 $scope.temporadas = [];
 
@@ -39,13 +39,13 @@
                     var indice = document.getElementById("opcTemporadas");
                     pParametros.temporada = indice.options[indice.selectedIndex].text;
         
-                    svsManejadorEstadisticas.obtenerEstadisticasJuegos(pParametros).then(function(pResp){
+                    stadisticsService.obtenerEstadisticasJuegos(pParametros).then(function(pResp){
                         pResp.error ? notificationService.dangerMessage(): $scope.rankings.juego = pResp.parametros;  
                     });
                 };
 
                 $scope.generarRankingSocial = function(pParametros){
-                    svsManejadorEstadisticas.obtenerEstadisticasSociales(pParametros).then(function(pResp){
+                    stadisticsService.obtenerEstadisticasSociales(pParametros).then(function(pResp){
                         pResp.error ? notificationService.dangerMessage(): $scope.rankings.social = pResp.parametros;  
                     });
                 };
