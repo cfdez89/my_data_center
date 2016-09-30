@@ -24,6 +24,7 @@
 		var hideMenuBar = function() {
 			$('.navbar-collapse').click('li', function() {
 				$('.navbar-collapse').collapse('hide');
+				console.log("ocultar");
 			});
 		};	
 

@@ -12,7 +12,7 @@
 (function() {
     'use strict';
 
-	function playersCtl($location, sharePlayerService, svsManejadorJugadores, notificationService) {
+	function playersCtl($location, sharePlayerService, playersService, notificationService) {
 		
 		var vm           = this;
 		vm.players       = [];
@@ -21,7 +21,7 @@
 		vm.visibleSearch = false;
 
         var setPlayers = function() {
-            svsManejadorJugadores.obtenerJugadores().then(function(response) {
+            playersService.obtenerJugadores().then(function(response) {
                 response.status ? vm.players = response.data: notificationService.dangerMessage();	
             });
         };

@@ -11,7 +11,7 @@
 (function() {
     'use strict';
 
-    function playerCtl(sharePlayerService, svsManejadorJugadores, svsManejadorEstadisticas, notificationService) {
+    function playerCtl(sharePlayerService, playersService, svsManejadorEstadisticas, notificationService) {
         var vm          = this;
         vm.playerId     = -1;
         vm.jugador      = [];
@@ -22,19 +22,19 @@
         };
 
         var setPlayerProfile = function() {
-	        svsManejadorJugadores.obtenerJugador(vm.playerId).then(function(response) {
+	        playersService.obtenerJugador(vm.playerId).then(function(response) {
 	        	response.status ? vm.jugador = response.data: notificationService.dangerMessage();		
             });
         };
 
         var setRegTemStatistics = function() {
-	        svsManejadorJugadores.obtenerTempRegularJugador(vm.playerId).then(function(response) {
+	        playersService.obtenerTempRegularJugador(vm.playerId).then(function(response) {
 	        	response.status ? vm.estadisticas.regular = response.data: notificationService.dangerMessage();		
             });
         };
 
         var setPostTemStatistics = function() {
-	        svsManejadorJugadores.obtenerTempPosteriorJugador(vm.playerId).then(function(response) {
+	        playersService.obtenerTempPosteriorJugador(vm.playerId).then(function(response) {
 	        	response.status ? vm.estadisticas.posterior = response.data: notificationService.dangerMessage();		
             });
         };
