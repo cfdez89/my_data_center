@@ -23,7 +23,7 @@
         var vm   = this;	
         vm.teams = [];
 
-        var getTeams = function() {
+        function getTeams() {
             teamsService.getAllTeams().then(function(response) {
                 response.status ? vm.teams = response.data: notificationService.dangerMessage();	
             });

@@ -22,7 +22,7 @@
         
         var urlBase   = "http://localhost:3000/jugadores";
         
-        var getPlayersProfile = function() {
+        function getPlayersProfile() {
             
             return  requestService.retrieve(urlBase).then(function(pResp) {
                         return pResp.data; 
@@ -32,7 +32,7 @@
                     });
         };
 
-        var getPlayerProfile = function(pId) {
+        function getPlayerProfile(pId) {
             var url = urlBase + '/' + pId;
                   
             return  requestService.retrieve(url).then(function(pResp) {
@@ -43,7 +43,7 @@
                     });             
         };
 
-        var getTempRegJugador = function(pId) {
+        function getTempRegJugador(pId) {
             var url = urlBase + '/' + pId + '/temporadaregular';
             
             return  requestService.retrieve(url).then(function(pResp) {
@@ -54,7 +54,7 @@
                     }); 
         };
 
-        var getTempPostJugador = function(pId) {
+        function getTempPostJugador(pId) {
             var url = urlBase + '/' + pId + '/temporadaposterior';
             
             return  requestService.retrieve(url).then(function(pResp) {

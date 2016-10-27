@@ -20,11 +20,11 @@
 
         var playerId;
 	
-        var setPlayerId = function(pId) {
+        function setPlayerId(pId) {
             playerId = pId;
         };
 
-        var getPlayerId = function() {
+        function getPlayerId() {
             return playerId;  
         };
 

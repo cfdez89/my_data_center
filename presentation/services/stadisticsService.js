@@ -22,7 +22,7 @@
         
         var urlBase = 'http://localhost:3000/estadisticas';
         
-        var getGameStadistics = function(pParam) {
+        function getGameStadistics(pParam) {
             
             var url = urlBase + '/' + pParam.temporada + '/juegos';
             
@@ -34,7 +34,7 @@
                     });
         };
 
-        var getSocialStadistics = function(pParam) {
+        function getSocialStadistics(pParam) {
             
             var url = urlBase + '/' + pParam.fechaMinima + '/sociales/';
             

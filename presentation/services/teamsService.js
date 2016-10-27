@@ -22,7 +22,7 @@
         
         var urlBase = 'http://localhost:3000/teams';
         
-        var getTeams = function() {
+        function getTeams() {
             return  requestService.retrieve(urlBase).then(function(pResp) {
                         return pResp.data; 
                     },  

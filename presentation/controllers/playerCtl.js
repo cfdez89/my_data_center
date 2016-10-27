@@ -24,23 +24,23 @@
         vm.jugador      = [];
         vm.estadisticas = {};
         
-        var setPlayerId = function() {
+        function setPlayerId() {
             vm.playerId = sharePlayerService.getPlayer();
         };
 
-        var setPlayerProfile = function() {
+        function setPlayerProfile() {
 	        playersService.obtenerJugador(vm.playerId).then(function(response) {
 	        	response.status ? vm.jugador = response.data: notificationService.dangerMessage();		
             });
         };
 
-        var setRegTemStatistics = function() {
+        function setRegTemStatistics() {
 	        playersService.obtenerTempRegularJugador(vm.playerId).then(function(response) {
 	        	response.status ? vm.estadisticas.regular = response.data: notificationService.dangerMessage();		
             });
         };
 
-        var setPostTemStatistics = function() {
+        function setPostTemStatistics() {
 	        playersService.obtenerTempPosteriorJugador(vm.playerId).then(function(response) {
 	        	response.status ? vm.estadisticas.posterior = response.data: notificationService.dangerMessage();		
             });

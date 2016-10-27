@@ -22,7 +22,7 @@
         
         var urlBase = 'http://localhost:3000/temporadas';
         
-        var getSeasons = function() {
+        function getSeasons() {
             return  requestService.retrieve(urlBase).then(function(pResp) {
                         return pResp.data; 
                     },  

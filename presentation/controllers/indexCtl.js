@@ -27,7 +27,7 @@
 		};
 		*/
 
-		var hideMenuBar = function() {
+		function hideMenuBar() {
 			$('.navbar-collapse').click('li', function() {
 				$('.navbar-collapse').collapse('hide');
 				console.log("ocultar");
