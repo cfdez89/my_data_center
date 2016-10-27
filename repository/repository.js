@@ -7,7 +7,7 @@
 var fs   = require('fs'),
     path = require('path');
 
-var readMockDB = function(file) {
+function readMockDB(file) {
 
     var file = fs.readFileSync(file);
     var data = {};
