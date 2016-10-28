@@ -16,11 +16,11 @@
         .module('myDataCenter')
         .factory('seasonsService', seasonsService);
 
-    seasonsService.$inject = ['requestService'];
+    seasonsService.$inject = ['requestService', 'API_URL'];
 
-    function seasonsService(requestService) {  
+    function seasonsService(requestService, API_URL) {  
         
-        var urlBase = 'http://localhost:3000/temporadas';
+        var urlBase = API_URL + '/temporadas';
         
         function getSeasons() {
             return  requestService.retrieve(urlBase).then(function(pResp) {

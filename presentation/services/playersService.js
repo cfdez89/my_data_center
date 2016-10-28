@@ -16,11 +16,11 @@
         .module('myDataCenter')
         .factory('playersService', playersService);
 
-    playersService.$inject = ['requestService'];
+    playersService.$inject = ['requestService', 'API_URL'];
 
-    function playersService(requestService) {  
+    function playersService(requestService, API_URL) {  
         
-        var urlBase   = "http://localhost:3000/jugadores";
+        var urlBase   = API_URL + "/jugadores";
         
         function getPlayersProfile() {
             

@@ -16,11 +16,11 @@
         .module('myDataCenter')
         .factory('stadisticsService', stadisticsService);
 
-    stadisticsService.$inject = ['requestService'];
+    stadisticsService.$inject = ['requestService', 'API_URL'];
 
-    function stadisticsService(requestService) {  
+    function stadisticsService(requestService, API_URL) {  
         
-        var urlBase = 'http://localhost:3000/estadisticas';
+        var urlBase = API_URL + '/estadisticas';
         
         function getGameStadistics(pParam) {
             

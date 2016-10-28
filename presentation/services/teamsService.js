@@ -16,11 +16,11 @@
         .module('myDataCenter')
         .factory('teamsService', teamsService);
 
-    teamsService.$inject = ['requestService'];
+    teamsService.$inject = ['requestService', 'API_URL'];
 
-    function teamsService(requestService) {  
+    function teamsService(requestService, API_URL) {  
         
-        var urlBase = 'http://localhost:3000/teams';
+        var urlBase = API_URL + '/teams';
         
         function getTeams() {
             return  requestService.retrieve(urlBase).then(function(pResp) {
