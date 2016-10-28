@@ -30,7 +30,7 @@
                         return pResp.data; 
                     },  
                     function(pResp) {
-                        return pResp.data;   
+                        return { status: false, message: pResp.statusText, data: null };   
                     });
         };
 
@@ -42,7 +42,7 @@
                         return pResp.data; 
                     },  
                     function(pResp) {
-                        return pResp.data;   
+                        return { status: false, message: pResp.statusText, data: null };    
                     });
         };
    

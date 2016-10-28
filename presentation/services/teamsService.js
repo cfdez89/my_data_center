@@ -26,8 +26,8 @@
             return  requestService.retrieve(urlBase).then(function(pResp) {
                         return pResp.data; 
                     },  
-                    function(pResp) {
-                        return pResp.data;   
+                    function(pResp) { 
+                        return { status: false, message: pResp.statusText, data: null };   
                     });
         };
    
