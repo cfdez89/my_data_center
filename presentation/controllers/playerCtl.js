@@ -29,23 +29,23 @@
         };
 
         function setPlayerProfile() {
-	        playersService.obtenerJugador(vm.playerId).then(function(response) {
-	        	response.status ? vm.jugador = response.data
+            playersService.obtenerJugador(vm.playerId).then(function(response) {
+                response.status ? vm.jugador = response.data
                                 : notificationService.dangerMessage(response.message);		
             });
         };
 
         function setRegTemStatistics() {
-	        playersService.obtenerTempRegularJugador(vm.playerId).then(function(response) {
-	        	response.status ? vm.estadisticas.regular = response.data
+            playersService.obtenerTempRegularJugador(vm.playerId).then(function(response) {
+                response.status ? vm.estadisticas.regular = response.data
                                 : notificationService.dangerMessage(response.message);		
             });
         };
 
         function setPostTemStatistics() {
-	        playersService.obtenerTempPosteriorJugador(vm.playerId).then(function(response) {
-	        	response.status ? vm.estadisticas.posterior = response.data
-                                : notificationService.dangerMessage(response.message);		
+            playersService.obtenerTempPosteriorJugador(vm.playerId).then(function(response) {
+                response.status ? vm.estadisticas.posterior = response.data
+                : notificationService.dangerMessage(response.message);		
             });
         };
 
