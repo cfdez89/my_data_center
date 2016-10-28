@@ -25,7 +25,8 @@
 
         function getTeams() {
             teamsService.getAllTeams().then(function(response) {
-                response.status ? vm.teams = response.data: notificationService.dangerMessage(response.message);	
+                response.status ? vm.teams = response.data
+                                : notificationService.dangerMessage(response.message);	
             });
         };
 
