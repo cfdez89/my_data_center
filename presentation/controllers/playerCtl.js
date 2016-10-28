@@ -45,7 +45,7 @@
         function setPostTemStatistics() {
             playersService.obtenerTempPosteriorJugador(vm.playerId).then(function(response) {
                 response.status ? vm.estadisticas.posterior = response.data
-                : notificationService.dangerMessage(response.message);		
+                                : notificationService.dangerMessage(response.message);		
             });
         };
 
