@@ -35,6 +35,7 @@
         <script type="text/javascript" src="/presentation/common/requestService.js"></script>
         <script type="text/javascript" src="/presentation/common/sharePlayerService.js"></script>
         <script type="text/javascript" src="/presentation/common/notificationService.js"></script>
+        <script type="text/javascript" src="/presentation/common/menuService.js"></script>
         <!-- services -->
         <script type="text/javascript" src="/presentation/services/teamsService.js"></script> 
         <script type="text/javascript" src="/presentation/services/playersService.js"></script> 
@@ -52,7 +53,7 @@
         
     </head>
     <body >
-        <div id="index" class="container-fluid">
+        <div id="index" class="container-fluid" ng-controller="indexCtl as vm">
             <div class="row">
                 <div class="col-md-1"></div>
                 <!--barra de navegacion-->
@@ -72,9 +73,9 @@
                             </div>
                             <div class="navbar-collapse collapse" >
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a ng-href="/teams">Teams</a></li>
-                                    <li><a ng-href="/players">Players</a></li>
-                                    <li><a ng-href="/rankings">Rankings</a></li> 
+                                    <li ng-repeat="menu in vm.menus">
+                                        <a ng-href="{{menu.url}}">{{menu.title}}</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

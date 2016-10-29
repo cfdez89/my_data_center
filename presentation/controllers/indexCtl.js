@@ -16,21 +16,16 @@
         .module('myDataCenter')
         .controller('indexCtl', indexCtl);
 
-	function indexCtl() {
+    indexCtl.$inject = ['menuService'];
+
+	function indexCtl(menuService) {
 		
 		var vm = this;
-
-		
-        /*
-		vm.verJugadores = function() {
-			$location.path('/jugadores').replace();
-		};
-		*/
+		vm.menus = menuService.getMenuLinks();
 
 		function hideMenuBar() {
 			$('.navbar-collapse').click('li', function() {
 				$('.navbar-collapse').collapse('hide');
-				console.log("ocultar");
 			});
 		};	
 
