@@ -73,8 +73,8 @@
                             </div>
                             <div class="navbar-collapse collapse" >
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li ng-repeat="menu in vm.menus">
-                                        <a ng-href="{{menu.url}}">{{menu.title}}</a>
+                                    <li ng-repeat="menu in vm.menus" ng-class="{'active': vm.isCurrentMenu(menu)}">
+                                        <a ng-href="{{menu.url}}" ng-click="vm.setCurrentMenu(menu)">{{menu.name}}</a>
                                     </li>
                                 </ul>
                             </div>

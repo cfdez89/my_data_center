@@ -22,13 +22,24 @@
 		
         var vm = this;
         vm.menus = menuService.getMenuLinks();
+        vm.currentMenu = vm.menus[1];
 
         function hideMenuBar() {
             $('.navbar-collapse').click('li', function() {
                 $('.navbar-collapse').collapse('hide');
             });
+        };
+
+        function setCurrentMenu(menu){
+        	vm.currentMenu = menu;
+        };
+
+        function isCurrentMenu(menu){
+        	return  vm.currentMenu === menu; 
         };	
 
+        vm.setCurrentMenu = setCurrentMenu;
+        vm.isCurrentMenu = isCurrentMenu;
         hideMenuBar();
     };
 	

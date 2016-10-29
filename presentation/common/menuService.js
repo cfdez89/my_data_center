@@ -18,9 +18,9 @@
     function menuService() { 
 
         var menuLinks = [
-            { id: 0, title: 'Teams', url: '/teams' },
-            { id: 1, title: 'Players', url: '/players' },
-            { id: 2, title: 'Rankings', url: '/rankings' }
+            { id: 0, name: 'Teams', url: '/teams' },
+            { id: 1, name: 'Players', url: '/players' },
+            { id: 2, name: 'Rankings', url: '/rankings' }
         ];
 
         function getLinks() {
