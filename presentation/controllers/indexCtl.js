@@ -18,18 +18,18 @@
 
     indexCtl.$inject = ['menuService'];
 
-	function indexCtl(menuService) {
+    function indexCtl(menuService) {
 		
-		var vm = this;
-		vm.menus = menuService.getMenuLinks();
+        var vm = this;
+        vm.menus = menuService.getMenuLinks();
 
-		function hideMenuBar() {
-			$('.navbar-collapse').click('li', function() {
-				$('.navbar-collapse').collapse('hide');
-			});
-		};	
+        function hideMenuBar() {
+            $('.navbar-collapse').click('li', function() {
+                $('.navbar-collapse').collapse('hide');
+            });
+        };	
 
-	    hideMenuBar();
-	};
+        hideMenuBar();
+    };
 	
 })();
