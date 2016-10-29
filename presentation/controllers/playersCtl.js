@@ -14,15 +14,15 @@
 
     angular
         .module('myDataCenter')
-	    .controller('playersCtl', playersCtl);
+        .controller('playersCtl', playersCtl);
 
-	playersCtl.$inject = ['$location', 'sharePlayerService', 'playersService', 'notificationService'];
+    playersCtl.$inject = ['$location', 'sharePlayerService', 'playersService', 'notificationService'];
 
-	function playersCtl($location, sharePlayerService, playersService, notificationService) {
+    function playersCtl($location, sharePlayerService, playersService, notificationService) {
 		
         var vm           = this;
         vm.players       = [];
-	    vm.tagMdl        = "";
+        vm.tagMdl        = "";
         vm.filtrados     = 0; 
         vm.visibleSearch = false;
 
