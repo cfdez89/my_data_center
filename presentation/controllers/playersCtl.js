@@ -33,17 +33,19 @@
             });
         };
 
-        vm.showSearch = function() {
+        function showSearch() {
         	if(vm.tagMdl != ""){
                 vm.visibleSearch = !vm.visibleSearch;
         	}   
         };
 
-        vm.gotToProfile = function(pId) {
+        function gotToProfile(pId) {
 		    sharePlayerService.setPlayer(pId);
 		    $location.path('/player').replace();
 		};
-
+        
+        vm.showSearch = showSearch;
+        vm.gotToProfile = gotToProfile;
         setPlayers();
         
 	};
