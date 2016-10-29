@@ -20,11 +20,11 @@
 
 	function playersCtl($location, sharePlayerService, playersService, notificationService) {
 		
-		var vm           = this;
-		vm.players       = [];
+        var vm           = this;
+        vm.players       = [];
 	    vm.tagMdl        = "";
-		vm.filtrados     = 0; 
-		vm.visibleSearch = false;
+        vm.filtrados     = 0; 
+        vm.visibleSearch = false;
 
         function setPlayers() {
             playersService.obtenerJugadores().then(function(response) {
@@ -34,20 +34,20 @@
         };
 
         function showSearch() {
-        	if(vm.tagMdl != ""){
+            if(vm.tagMdl != ""){
                 vm.visibleSearch = !vm.visibleSearch;
-        	}   
+            }   
         };
 
         function gotToProfile(pId) {
-		    sharePlayerService.setPlayer(pId);
-		    $location.path('/player').replace();
-		};
+            sharePlayerService.setPlayer(pId);
+            $location.path('/player').replace();
+        };
         
         vm.showSearch = showSearch;
         vm.gotToProfile = gotToProfile;
         setPlayers();
         
-	};
+    };
 
 })();
