@@ -31,11 +31,11 @@
         };
 
         function setCurrentMenu(menu){
-        	vm.currentMenu = menu;
+            vm.currentMenu = menu;
         };
 
         function isCurrentMenu(menu){
-        	return  vm.currentMenu === menu; 
+            return  vm.currentMenu === menu; 
         };	
 
         vm.setCurrentMenu = setCurrentMenu;
