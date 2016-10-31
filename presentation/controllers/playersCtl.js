@@ -28,7 +28,7 @@
 
         function setPlayers() {
             playersService.obtenerJugadores().then(function(response) {
-                response.status ? vm.players = response.data
+                response.success? vm.players = response.data
                                 : notificationService.dangerMessage(response.message);	
             });
         };
