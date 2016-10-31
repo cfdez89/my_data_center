@@ -21,7 +21,7 @@ exports.getAllPlayers = function(request, response) {
 };
 
 exports.getPlayerById = function(request, response) {
-    var id = request.params.id;
+    var id = parseInt(request.params.id);
     var data = nbaRepository.getPlayerById(id);
     response.status(200);
     response.send(data);
