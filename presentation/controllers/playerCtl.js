@@ -24,35 +24,35 @@
         vm.jugador      = [];
         vm.estadisticas = {};
         
-        function setPlayerId() {
+        function getPlayerId() {
             vm.playerId = sharePlayerService.getPlayer();
         };
 
-        function setPlayerProfile() {
-            playersService.obtenerJugador(vm.playerId).then(function(response) {
+        function getPlayerProfile() {
+            playersService.getPlayer(vm.playerId).then(function(response) {
                 response.success? vm.jugador = response.data
                                 : notificationService.dangerMessage(response.message);		
             });
         };
 
-        function setRegTemStatistics() {
-            playersService.obtenerTempRegularJugador(vm.playerId).then(function(response) {
+        function getRegularSeason() {
+            playersService.getRegularSeason(vm.playerId).then(function(response) {
                 response.success? vm.estadisticas.regular = response.data
                                 : notificationService.dangerMessage(response.message);		
             });
         };
 
-        function setPostTemStatistics() {
-            playersService.obtenerTempPosteriorJugador(vm.playerId).then(function(response) {
+        function getPostSeason() {
+            playersService.getPostSeason(vm.playerId).then(function(response) {
                 response.success? vm.estadisticas.posterior = response.data
                                 : notificationService.dangerMessage(response.message);		
             });
         };
 
-        setPlayerId();
-        setPlayerProfile();
-        setRegTemStatistics();
-        setPostTemStatistics();
+        getPlayerId();
+        getPlayerProfile();
+        getRegularSeason();
+        getPostSeason();
     };
 
 })();

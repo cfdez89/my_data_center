@@ -43,7 +43,7 @@
                     });             
         };
 
-        function getTempRegJugador(pId) {
+        function getRegSeasonPlayer(pId) {
             var url = urlBase + '/' + pId + '/temporadaregular';
             
             return  requestService.retrieve(url).then(function(pResp) {
@@ -54,7 +54,7 @@
                     }); 
         };
 
-        function getTempPostJugador(pId) {
+        function getPostSeasonPlayer(pId) {
             var url = urlBase + '/' + pId + '/temporadaposterior';
             
             return  requestService.retrieve(url).then(function(pResp) {
@@ -66,17 +66,17 @@
         };     
    
         return  {
-            obtenerJugadores: function() {
+            getAllPlayers: function() {
                 return getPlayersProfile();  
             },
-            obtenerJugador: function(pId) {
+            getPlayer: function(pId) {
                 return  getPlayerProfile(pId);
             },
-            obtenerTempRegularJugador: function(pId) {
-                return  getTempRegJugador(pId);
+            getRegularSeason: function(pId) {
+                return  getRegSeasonPlayer(pId);
             },
-            obtenerTempPosteriorJugador: function(pId) {
-                return getTempPostJugador(pId);
+            getPostSeason: function(pId) {
+                return getPostSeasonPlayer(pId);
             }
         };
 

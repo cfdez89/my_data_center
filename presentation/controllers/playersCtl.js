@@ -27,7 +27,7 @@
         vm.visibleSearch = false;
 
         function setPlayers() {
-            playersService.obtenerJugadores().then(function(response) {
+            playersService.getAllPlayers().then(function(response) {
                 response.success? vm.players = response.data
                                 : notificationService.dangerMessage(response.message);	
             });
