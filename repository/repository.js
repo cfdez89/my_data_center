@@ -59,23 +59,33 @@ function getPlayerById(pId) {
     };
     return ViewModel.set(false, 'Player profile not found', {}); 
 };
-//corregir
-function getAllRegularSeasonPlayerById() {
+
+function getAllRegularSeasonPlayerById(pId) {
 
     var db = readMockDB(filePath);
     if(db.profiles === undefined) {
-        return ViewModel.set(false, 'Player profile not found', {});  
+        return ViewModel.set(false, 'Regular season stadistics  not found', {});  
     }
-    return ViewModel.set(true, 'Get  all player was successfull', db.players);
+    for (var i = 0; i < db.profiles.length ; i++) { 
+        if(db.profiles[i].id === pId){ 
+            return ViewModel.set(true, 'Get regular season was successfull', db.profiles[i].temporadaRegular);
+        }   
+    };
+    return ViewModel.set(false, 'Regular season stadistics player not found', {}); 
 };
-//corregir
-function getAllPostSeasonPlayerById() {
+
+function getAllPostSeasonPlayerById(pId) {
 
     var db = readMockDB(filePath);
     if(db.players === undefined) {
-        return ViewModel.set(false, 'Player profile not found', {});  
+        return ViewModel.set(false, 'Post season stadistics not found', {});  
     }
-    return ViewModel.set(true, 'Get  all player was successfull', db.players);
+    for (var i = 0; i < db.profiles.length ; i++) { 
+        if(db.profiles[i].id === pId){ 
+            return ViewModel.set(true, 'Get post season was successfull', db.profiles[i].postTemporada);
+        }   
+    };
+    return ViewModel.set(false, 'Post season stadistics player not found', {}); 
 };
 //corregir
 function getAllGameStatisticsPlayerById() {

@@ -28,13 +28,15 @@ exports.getPlayerById = function(request, response) {
 };
 
 exports.getAllRegularSeasonPlayerById = function(request, response) {
-    var data = nbaRepository.getAllPlayers();
+    var id = parseInt(request.params.id);
+    var data = nbaRepository.getAllRegularSeasonPlayerById(id);
     response.status(200);
     response.send(data);
 };
 
 exports.getAllPostSeasonPlayerById = function(request, response) {
-    var data = nbaRepository.getAllPlayers();
+    var id = parseInt(request.params.id);
+    var data = nbaRepository.getAllPostSeasonPlayerById(id);
     response.status(200);
     response.send(data);
 };
