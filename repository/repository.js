@@ -7,6 +7,12 @@
 var fs   = require('fs'),
     path = require('path');
 
+/* import services modules */
+
+var ViewModel = require('../utils/viewModel.js');
+
+var filePath = path.join(__dirname, 'mockDB.json');
+
 function readMockDB(file) {
 
     var file = fs.readFileSync(file);
@@ -21,151 +27,82 @@ function readMockDB(file) {
     return data;
 };
 
-var filePath = path.join(__dirname, 'mockDB.json');
-
+//corregir
 function getAllSeasons() {
 
     var db = readMockDB(filePath);
-    if(db.players == undefined) {
-        return {
-            status: false, 
-            message: 'No se  ha obtenido los jugadores',
-            data: {}
-        } 
+    if(db.players === undefined) {
+        return ViewModel.set(false, 'No se  ha obtenido los jugadores', {}); 
     }
-    return {
-        status: true, 
-        message: 'Se ha obtenido todos los jugadores de manera correcta',
-        data: db.players
-    }
+    return ViewModel.set(true, 'Se ha obtenido todos los jugadores de manera correcta', db.players);
 };
 
 function getAllPlayers() {
 
     var db = readMockDB(filePath);
-    if(db.players == undefined) {
-        return {
-            status: false, 
-            message: 'No se  ha obtenido los jugadores',
-            data: {}
-        } 
+    if(db.players === undefined) {
+        return ViewModel.set(false, 'Players not found', {});
     }
-    return {
-        status: true, 
-        message: 'Se ha obtenido todos los jugadores de manera correcta',
-        data: db.players
-    }
+    return ViewModel.set(true, 'Get  all player was successfull', db.players);
 };
 
 function getPlayerById(pId) {
 
     var db = readMockDB(filePath);
-    if(db.profiles == undefined) {
-        return {
-            status: false, 
-            message: 'No se  ha obtenido los jugadores',
-            data: {}
-        } 
+    if(db.profiles === undefined) {
+        return ViewModel.set(false, 'Player profile not found', {}); 
     }
-    for (var i = 0; i < db.profiles .length ; i++) {
-        if(db.profiles[i].id == pId){
-            return {
-                status: true, 
-                message: 'Se ha obtenido todos los jugadores de manera correcta',
-                data: db.profiles[i]
-            }
+    for (var i = 0; i < db.profiles.length ; i++) { 
+        if(db.profiles[i].id === pId){ 
+            return ViewModel.set(true, 'Get player profile was successfull', db.profiles[i]);
         }   
     };
-    return {
-        status: false, 
-        message: 'No se ha obtenido todos los jugadores de manera correcta',
-        data: {}
-    }
+    return ViewModel.set(false, 'Player profile not found', {}); 
 };
-
+//corregir
 function getAllRegularSeasonPlayerById() {
 
     var db = readMockDB(filePath);
-    if(db.profiles == undefined) {
-        return {
-            status: false, 
-            message: 'No se  ha obtenido los jugadores',
-            data: {}
-        } 
+    if(db.profiles === undefined) {
+        return ViewModel.set(false, 'Player profile not found', {});  
     }
-    return {
-        status: true, 
-        message: 'Se ha obtenido todos los jugadores de manera correcta',
-        data: db.players
-    }
+    return ViewModel.set(true, 'Get  all player was successfull', db.players);
 };
-
+//corregir
 function getAllPostSeasonPlayerById() {
 
     var db = readMockDB(filePath);
-    if(db.players == undefined) {
-        return {
-            status: false, 
-            message: 'No se  ha obtenido los jugadores',
-            data: {}
-        } 
+    if(db.players === undefined) {
+        return ViewModel.set(false, 'Player profile not found', {});  
     }
-    return {
-        status: true, 
-        message: 'Se ha obtenido todos los jugadores de manera correcta',
-        data: db.players
-    }
+    return ViewModel.set(true, 'Get  all player was successfull', db.players);
 };
-
+//corregir
 function getAllGameStatisticsPlayerById() {
 
     var db = readMockDB(filePath);
-    if(db.players == undefined) {
-        return {
-            status: false, 
-            message: 'No se  ha obtenido los jugadores',
-            data: {}
-        } 
+    if(db.players === undefined) {
+        return ViewModel.set(false, 'Player profile not found', {});  
     }
-    return {
-        status: true, 
-        message: 'Se ha obtenido todos los jugadores de manera correcta',
-        data: db.players
-    }
+    return ViewModel.set(true, 'Get  all player was successfull', db.players);
 };
-
+//corregir
 function getAllSocialStatisticsPlayerById() {
  
     var db = readMockDB(filePath);
-    if(db.players == undefined) {
-        return {
-            status: false, 
-            message: 'No se  ha obtenido los jugadores',
-            data: {}
-        } 
+    if(db.players === undefined) {
+        return ViewModel.set(false, 'Player profile not found', {});  
     }
-    return {
-        status: true, 
-        message: 'Se ha obtenido todos los jugadores de manera correcta',
-        data: db.players
-    }
+    return ViewModel.set(true, 'Get  all player was successfull', db.players);
 };
 
 function getAllTeams() {
 
     var db = readMockDB(filePath);
-    if(db.teams == undefined) {
-        return {
-            status: false, 
-            message: 'No se  ha obtenido los equipos',
-            data: {}
-        } 
+    if(db.teams === undefined) {
+        return ViewModel.set(false, 'Team profile not found', {});  
     }
-    return {
-        status: true, 
-        message: 'Se ha obtenido todos los equipos de manera correcta',
-        data: db.teams
-    }
+    return ViewModel.set(true, 'Get  all team profiles was successfull', db.teams);
 };
 
 module.exports = {
