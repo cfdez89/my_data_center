@@ -27,14 +27,14 @@ function readMockDB(file) {
     return data;
 };
 
-//corregir
+
 function getAllSeasons() {
 
     var db = readMockDB(filePath);
-    if(db.players === undefined) {
-        return ViewModel.set(false, 'No se  ha obtenido los jugadores', {}); 
+    if(db.seasons === undefined) {
+        return ViewModel.set(false, 'Seasons not found', {}); 
     }
-    return ViewModel.set(true, 'Se ha obtenido todos los jugadores de manera correcta', db.players);
+    return ViewModel.set(true, 'Get seasons was successfull', db.seasons);
 };
 
 function getAllPlayers() {
