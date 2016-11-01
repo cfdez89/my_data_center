@@ -9,7 +9,7 @@
 var nbaRepository = require('../repository/repository.js');
 
 exports.getAllSeasons = function(request, response) {
-    var data = nbaRepository.getAllPlayers();
+    var data = nbaRepository.getAllSeasons();
     response.status(200);
     response.send(data);
 };
