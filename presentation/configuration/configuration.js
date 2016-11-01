@@ -45,7 +45,9 @@
                 controllerAs: 'vm'
             })
             .when('/rankings', {
-                templateUrl: '/presentation/views/rankings.html'
+                templateUrl: '/presentation/views/rankings.html',
+                controller: 'rankingCtl',
+                controllerAs: 'vm'
             })
             .when('/players', {
                 templateUrl: '/presentation/views/players.html',
