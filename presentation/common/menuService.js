@@ -13,7 +13,7 @@
 
     angular
         .module('myDataCenter')
-        .service('menuService', menuService);
+        .factory('menuService', menuService);
 
     function menuService() { 
 
