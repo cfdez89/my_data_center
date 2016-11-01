@@ -14,11 +14,11 @@
 
     angular
         .module('myDataCenter')
-        .factory('stadisticsService', stadisticsService);
+        .factory('statisticsService', statisticsService);
 
-    stadisticsService.$inject = ['requestService', 'API_URL'];
+    statisticsService.$inject = ['requestService', 'API_URL'];
 
-    function stadisticsService(requestService, API_URL) {  
+    function statisticsService(requestService, API_URL) {  
         
         var urlBase = API_URL + '/estadisticas';
         
@@ -47,10 +47,10 @@
         };
    
         return  {
-            obtenerEstadisticasJuegos: function(pParam) {
+            getGameRanking: function(pParam) {
                 return getGameStadistics(pParam);             
             },
-            obtenerEstadisticasSociales: function(pParam) {
+            getSocialRanking: function(pParam) {
                 return getSocialStadistics(pParam);
             }
         };
