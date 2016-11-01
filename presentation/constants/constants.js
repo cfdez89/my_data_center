@@ -10,9 +10,9 @@
  */
  
 (function() {
-	'use strict';
+    'use strict';
 
-	angular
+    angular
         .module('myDataCenter')
         .constant('API_URL', 'http://localhost:3000');
 	

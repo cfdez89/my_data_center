@@ -27,7 +27,7 @@
         };
     	
 
-        function getSeasons(){
+        function getSeasons() {
             seasonsService.getAllSeasons().then(function(response){ 
                 response.success? vm.seasons = response.data
                                 : notificationService.dangerMessage(response.message); 
