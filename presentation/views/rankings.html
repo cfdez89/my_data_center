@@ -7,8 +7,8 @@
             <br></br>
         </div>
         <ul class="nav nav-pills nav-justified">
-            <li class="active"><a data-toggle="tab" href="#juego">Ranking estadisticas de juego</a></li>
-            <li><a data-toggle="tab" href="#social">Ranking impacto social</a></li>
+            <li class="active"><a data-toggle="tab" href="#juego">Game statistics ranking</a></li>
+            <li><a data-toggle="tab" href="#social">Social impact statistics ranking</a></li>
         </ul>
         <div class="tab-content" align="center">
             <div id="juego" class="tab-pane fade in active">
@@ -16,24 +16,24 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-3">
-                                <select id="opcTemporadas" class="form-control" >
-                                    <option ng-repeat="temp in temporadas" value="{{temp.id}}">{{temp.anno}}</option>
+                                <select id="teamOpt" class="form-control" >
+                                    <option ng-repeat="temp in vm.seasons" value="{{temp.id}}">{{temp.anno}}</option>
                                 </select>
                             </div> 
                             <div class="col-md-3">
                                 <div class="input-group">
-                                    <span class="input-group-addon"> Minimo juegos </span>
-                                    <input type="number" name="input" ng-model="parametrosBusqueda.juego.minimo" min="1" max="2000" class="form-control" required>
+                                    <span class="input-group-addon"> Minimun games </span>
+                                    <input type="number" name="input" ng-model="vm.searchParams.juego.minimo" min="1" max="2000" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="input-group">
                                     <span class="input-group-addon"> Top </span>
-                                    <input type="number" name="input" ng-model="parametrosBusqueda.juego.top" min="1" max="2000" class="form-control" required>
+                                    <input type="number" name="input" ng-model="vm.searchParams.juego.top" min="1" max="2000" class="form-control" required>
                                  </div>
                             </div>
                             <div class="col-md-3">
-                                <button type="button" class="btn btn-default " class="form-control" ng-click="generarRankingJuego(parametrosBusqueda.juego)">Generar Ranking</button> 
+                                <button type="button" class="btn btn-default " class="form-control" ng-click="vm.generateGameRanking(vm.searchParams.juego)">Generate ranking</button> 
                             </div>
                             <br><br/>
                         </div>
@@ -46,11 +46,11 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Posicion</th>
-                                        <th>Nombre</th>
-                                        <th>Apellido</th>
-                                        <th>Equipo</th>
-                                        <th>Indice total</th>
+                                        <th>Position</th>
+                                        <th>Name</th>
+                                        <th>Last name</th>
+                                        <th>Team</th>
+                                        <th>Total index</th>
                                     </tr>
                                 </thead>
                                 <tbody ng-repeat="juego in rankings.juego">
@@ -74,25 +74,25 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <span class="input-group-addon"> Fecha Minima </span>
-                                        <input id="fechaMinima" name="fechaMinima" my-datepicker type="text" class="form-control" ng-model="parametrosBusqueda.social.fechaMinima" required>
+                                        <span class="input-group-addon"> Minimun date</span>
+                                        <input id="fechaMinima" name="fechaMinima" my-datepicker type="text" class="form-control" ng-model="vm.searchParams.social.fechaMinima" required>
                                     </div>
                                 </div>
                             </div> 
                             <div class="col-md-3">
                                 <div class="input-group">
-                                    <span class="input-group-addon"> Fecha Maxima </span>
-                                    <input id="fechaMaxima" name="fechaMaxima" my-datepicker type="text" class="form-control" ng-model="parametrosBusqueda.social.fechaMaxima" required>
+                                    <span class="input-group-addon"> Maximun date </span>
+                                    <input id="fechaMaxima" name="fechaMaxima" my-datepicker type="text" class="form-control" ng-model="vm.searchParams.social.fechaMaxima" required>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="input-group">
                                     <span class="input-group-addon"> Top </span>
-                                    <input type="number" name="input" ng-model="parametrosBusqueda.social.top" min="1" max="2000" class="form-control" required>
+                                    <input type="number" name="input" ng-model="vm.searchParams.social.top" min="1" max="2000" class="form-control" required>
                                  </div>
                             </div>
                             <div class="col-md-3">
-                                <button type="button" class="btn btn-default " class="form-control" ng-click="generarRankingSocial(parametrosBusqueda.social)">Generar Ranking</button> 
+                                <button type="button" class="btn btn-default " class="form-control" ng-click="vm.generateSocialRanking(vm.searchParams.social)">Generate Ranking</button> 
                             </div>
                             <br><br/>
                         </div>
@@ -104,11 +104,11 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Posicion</th>
-                                        <th>Nombre</th>
-                                        <th>Apellido</th>
-                                        <th>Equipo</th>
-                                        <th># Menciones</th>
+                                        <th>Position</th>
+                                        <th>Name</th>
+                                        <th>Last name</th>
+                                        <th>Team</th>
+                                        <th># Mentions</th>
                                     </tr>
                                 </thead>
                                 <tbody ng-repeat="social in rankings.social">
